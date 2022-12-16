@@ -1,1 +1,31 @@
 @charset "UTF-8";
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+nav h1 {
+    font-family: 'Righteous';
+    font-size: 2em;
+}
+
+nav{
+    background-color: #D1CFC7;
+    display: flex;
+    align-items: center;
+}
+
+code {
+    background-color: #D1CFC7;
+}
+
+.solution {
+    width: 60%;
+    background-color: #D1CFC7;
+}
