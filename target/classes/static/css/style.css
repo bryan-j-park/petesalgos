@@ -10,15 +10,33 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-nav h1 {
+header h1 {
     font-family: 'Righteous';
     font-size: 2em;
+    color:#0A2463;
 }
 
-nav{
+header{
     background-color: #D1CFC7;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding:20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.links {
+    width:20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+pre {
+    white-space: pre-wrap;
 }
 
 code {
@@ -28,4 +46,21 @@ code {
 .solution {
     width: 60%;
     background-color: #D1CFC7;
+    overflow: auto;
+}
+
+a {
+    text-decoration: none;
+    color:#0A2463;
+}
+
+a:hover {
+    color:#9D808E;
+    text-decoration: underline;
+}
+
+main {
+    
+    width:80%;
+    margin:0 auto;
 }
