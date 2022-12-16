@@ -14,6 +14,7 @@ header h1 {
     font-family: 'Righteous';
     font-size: 2em;
     color:#0A2463;
+    margin-left: 20px;
 }
 
 header{
@@ -60,7 +61,22 @@ a:hover {
 }
 
 main {
-    
     width:80%;
-    margin:0 auto;
+    margin:25px auto;
+}
+
+table {
+    margin:20px 0;
+    width:100%;
+}
+
+table, th, td {
+    border-bottom: 1px solid #bbb;
+    border-collapse: collapse;
+    padding: 20px;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #D1CFC7;
 }
