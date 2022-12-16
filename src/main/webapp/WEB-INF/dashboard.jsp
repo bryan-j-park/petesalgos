@@ -27,18 +27,23 @@
         </div>
     </header>
     <main>
-        <h2>1. Title of Problem</h2>
-        <pre>insert problem here</pre>
-        <br><br>
-
-        <div class="solution">
-        <pre>
-            <code>
-                ${problem.code}
-            </code>
-        </pre>
-        </div>
-
+        <h1>All Algos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Difficulty</th>
+                    <th>Leetcode link?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="">algo name</a></td>
+                    <td>easy</td>
+                    <td>link or whatever</td>
+                </tr>
+            </tbody>
+        </table>
     </main>
 </body>
 </html>
