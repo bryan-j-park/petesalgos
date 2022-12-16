@@ -2,6 +2,8 @@ package com.nightcrew.petesalgos.services;
 
 import java.util.Optional;
 
+import javax.servlet.http.HttpSession;
+
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -67,6 +69,11 @@ public class UserService {
 			// Otherwise, return the user object
 	    	return user;
 		
-        } 
+        }
+
+
+
+
+
 
 }

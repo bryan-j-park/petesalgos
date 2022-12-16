@@ -20,14 +20,17 @@ import com.nightcrew.petesalgos.services.UserService;
 public class MainController {
     @Autowired
 	private UserService userService;
+
 	
+
+
+
 	@GetMapping("/")
 	public String logreg(Model model) {
 		model.addAttribute("newUser", new User());
 		model.addAttribute("newLogin", new LoginUser());
 		return "logreg.jsp";
 	}
-	
 	
 	@PostMapping("/register")
 	public String register(@Valid @ModelAttribute("newUser") User newUser,
@@ -45,6 +48,7 @@ public class MainController {
 		
 	}
 	
+ 
 	@PostMapping("/login")
 	public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin,
 			BindingResult result, Model model, HttpSession session) {
@@ -71,4 +75,22 @@ public class MainController {
     public String algo() {
         return "algo.jsp";
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

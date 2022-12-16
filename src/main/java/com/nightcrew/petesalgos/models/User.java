@@ -4,6 +4,7 @@ package com.nightcrew.petesalgos.models;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -61,7 +62,13 @@ import org.springframework.format.annotation.DateTimeFormat;
 	    protected void onUpdate() {
 	    	this.updatedAt = new Date();
 	    }
-	    
+      //joining person with License as a 1:n
+			@OneToMany(mappedBy="user", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+			private List<Problem> problem;
+
+
+
+
 	    public User() {}
 
 		public Long getId() {
