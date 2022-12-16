@@ -12,6 +12,6 @@ public interface ProblemRepository extends CrudRepository<Problem, Long> {
 
   List<Problem> findAll();
 
-  List<Problem> findUserById(Long userId);
+  List<Problem> findProblemById(Long userId);
  
 }
