@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -33,8 +34,10 @@ public class Problem{
   private String datatype;
   @NotNull
   private Long number;
-
-
+  
+  @NotNull
+  @Lob
+  private String code;
 //    joining user table 
   
   
@@ -111,6 +114,14 @@ public class Problem{
   }
   public void setUpdatedAt(Date updatedAt) {
     this.updatedAt = updatedAt;
+  }
+
+  public String getCode() {
+    return code;
+  }
+
+  public void setCode(String code) {
+    this.code = code;
   }
 
   
