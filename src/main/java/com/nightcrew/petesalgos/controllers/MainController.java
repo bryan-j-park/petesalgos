@@ -27,9 +27,12 @@ public class MainController {
 	@Autowired
 	private ProblemService problemService;
 
+    @GetMapping ("/")
+    public String index() {
+        return "index.jsp";
+    }
 
-
-	@GetMapping("/")
+	@GetMapping("/loginpage")
 	public String logreg(Model model) {
 		model.addAttribute("newUser", new User());
 		model.addAttribute("newLogin", new LoginUser());
