@@ -45,43 +45,6 @@ public String dashboard( HttpSession session, Model model){
   }
 }
 
-//  ========== . Create =========
-
-@GetMapping("/problem/new")
-public String createProblem(@ModelAttribute("newProblem") Problem problem, HttpSession session, Model model){
-  Boolean userSession = session.getAttribute("userId") == null; 
-
-  if(userSession){
-    return "redirect:/logout";
-  }
-  else{
-    return "createProblem.jsp";
-  }
-}
-
-// Processing create form
-
-
-@PostMapping("problem/new")
-public String createProblemSolution(@Valid @ModelAttribute("newProblem")Problem problem, BindingResult result, Model model, HttpSession session){
-
-  Boolean userSession = session.getAttribute("userId") == null; 
-
-  if(userSession){
-    return "redirect:/logout";
-  }
-    if(result.hasErrors()){
-      return "createProblem.jsp";
-    }
-    else{
-      problemService.createProblem(problem);
-      return "redirect:/dashboard";
-    }
-}
-
-
-
-
 // Display page
 
 @GetMapping("display/problem/{id}")
@@ -101,62 +64,5 @@ public String displayProblem(@PathVariable("id")Long id,Model model, HttpSession
   }
 }
 
-// edit page
-@RequestMapping("/problem/{id}/edit")
-public String edit(@PathVariable("id")Long id, Model model, HttpSession session){
-  Long nameUserId = problemService.getProblem(id).getUser().getId();
 
-  if(session.getAttribute("userId") == null){
-    return "redirect:/logout";
-  }
-  if(!session.getAttribute("userId").equals(nameUserId)){
-    return "redirect:/dashboard";
-  }
-  else{
-    Problem foundProblem = problemService.getProblem(id);
-    model.addAttribute("foundProblem", foundProblem);
-    return "editProblem.jsp";
-  }
-}
-
-
-//  Process edit form
-	@PutMapping("/edit/{id}/problem")
-//	foundProblem is the attribute to be passed into jsp form
-	public String editProblemForm(@Valid @ModelAttribute("foundProblem")Problem problem, BindingResult result,HttpSession session) {
-//		checking if the userID is in session/ assigning it the a boolean variable
-		Boolean userSession = session.getAttribute("userId") == null;
-		
-		if(userSession) {
-			return "redirect:/logout";
-		}
-		if(result.hasErrors()) {
-			return "editProblem.jsp";
-		}
-		else {
-			// editBook method from the bookServ file
-
-			problemService.editProblem(problem); //<--- book is the name in the parameter to be passed in
-			return "redirect:/dashboard";
-		}
-	}
-
-
-  	// delete
-	@DeleteMapping("/delete/{id}")
-	public String delete(@PathVariable("id") Long id) {
-		problemService.deleteProblem(id);
-		return "redirect:/dashboard";
-  }
-
-
-
-
-
-
-
-
-
-
-// end
 }
