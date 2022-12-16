@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-PetesalgosApplication<petesalgos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.nightcrew.petesalgos.PetesalgosApplication",
+            "projectName": "petesalgos",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
