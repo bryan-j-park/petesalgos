@@ -22,73 +22,86 @@
             <h1>Pete's Algos</h1>
         </nav>
         <div class="links">
-            <h2><a href="">all algos</a></h2>
+            <h2><a href="/dashboard">problems</a></h2>
             <h2><a href="/logout">logout</a></h2>
         </div>
     </header>
     <main>
         <h1>All Algos</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Number</th>
-                    <th>Problem</th>
-                    <th>Datatype</th>
-                    <th>Difficulty</th>
-                    <th>Add to Favorites</th>
-                </tr>
-            </thead>
-            <tbody>
-                <c:forEach var="problems"  items="${problemList}">
-                <tr>
+        <section class="main">
 
-                        <td> <c:out value="${problems.number}"/></td>
-
-                        <td><a href="/algo/${problems.id}"><c:out value="${problems.name}"/></a></td>
-
-                        <td><c:out value="${problems.datatype}"/></td>
-
-                        <td><c:out value="${problems.difficulty}"/></td>
-
-                       <td>
-                        <form action="/favorites/${problems.id}/receive" method="post">
-                            <input type="hidden" name="_method" value="put" />
-                            <button type="submit">Add To Favorites</button>
-                        </form>
-                    </td>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Problem</th>
+                        <th>Datatype</th>
+                        <th>Difficulty</th>
+                        <th>Add to Favorites</th>
                     </tr>
-                </c:forEach>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <c:forEach var="problems"  items="${problemList}">
+                    <tr>
 
+                            <td> <c:out value="${problems.number}"/></td>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Number</th>
-                    <th>Problem</th>
-                    <th>Datatype</th>
-                    <th>Difficulty</th>
-                    <th>Add to Favorites</th>
+                            <td><a href="/algo/${problems.id}"><c:out value="${problems.name}"/></a></td>
 
-                </tr>
-            </thead>
-            <tbody>
+                            <td><c:out value="${problems.datatype}"/></td>
+
+                            <td><c:out value="${problems.difficulty}"/></td>
+
+                        <td>
+                            <form action="/favorites/${problems.id}/receive" method="post">
+                                <input type="hidden" name="_method" value="put" />
+                                <button type="submit">Add To Favorites</button>
+                            </form>
+                        </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+            
+            <div class="profile">
+                <h2>insert current user name</h2>
+                <div class="line"></div>
                 <c:forEach var="favorites"  items="${favList}">
-                <tr>
-
-                        <td> <c:out value="${favorites.number}"/></td>
-
-                        <td><a href="/display/problem/${problems.id}"><c:out value="${favorites.name}"/></a></td>
-
-                        <td><c:out value="${favorites.datatype}"/></td>
-
-                        <td><c:out value="${favorites.difficulty}"/></td>
-                    </tr>
+                <ul>
+                    <li>
+                        <a href="/display/problem/${problems.id}"><c:out value="${favorites.name}"/></a>
+                    </li>
+                </ul>
                 </c:forEach>
-            </tbody>
-        </table>
-         
+            </div>
+
+            <!-- <table class="favorites">
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Problem</th>
+                        <th>Datatype</th>
+                        <th>Difficulty</th>
+                        <th>Add to Favorites</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach var="favorites"  items="${favList}">
+                    <tr>
+
+                            <td> <c:out value="${favorites.number}"/></td>
+
+                            <td><a href="/display/problem/${problems.id}"><c:out value="${favorites.name}"/></a></td>
+
+                            <td><c:out value="${favorites.datatype}"/></td>
+
+                            <td><c:out value="${favorites.difficulty}"/></td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table> -->
+        </section>
         
 
 
