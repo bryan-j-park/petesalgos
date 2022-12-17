@@ -47,7 +47,7 @@ public String dashboard( HttpSession session, Model model){
 
 // Display page
 
-@GetMapping("display/problem/{id}")
+@GetMapping("/display/problem/{id}")
 public String displayProblem(@PathVariable("id")Long id,Model model, HttpSession session){
 
   Boolean userSession = session.getAttribute("userId") == null; 
