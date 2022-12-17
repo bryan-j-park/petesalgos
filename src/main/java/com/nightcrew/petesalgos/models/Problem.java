@@ -32,6 +32,12 @@ public class Problem{
   @NotNull
   private String difficulty;
   @NotNull
+  @Size(min = 3, message="question must be entered")
+  private String question;
+  @NotNull
+  @Size(min = 3, message="description must be entered")
+  private String description;
+  @NotNull
   @NotNull
   @Size(min = 5, message="field must be at least 5 characters")
   private String datatype;
@@ -140,6 +146,38 @@ public class Problem{
 
   public void setCode(String code) {
     this.code = code;
+  }
+
+  public String getQuestion() {
+    return question;
+  }
+
+  public void setQuestion(String question) {
+    this.question = question;
+  }
+
+  public List<User> getFavorited() {
+    return favorited;
+  }
+
+  public void setFavorited(List<User> favorited) {
+    this.favorited = favorited;
+  }
+
+  public List<User> getUsers() {
+    return users;
+  }
+
+  public void setUsers(List<User> users) {
+    this.users = users;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 
   

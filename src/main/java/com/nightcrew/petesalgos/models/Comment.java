@@ -41,4 +41,80 @@ public class Comment {
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "problem_id")
   private Problem problem;
+
+
+
+
+
+  // getters/setters
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public String getComment() {
+    return comment;
+  }
+
+  public void setComment(String comment) {
+    this.comment = comment;
+  }
+
+  public String getUser_solution() {
+    return user_solution;
+  }
+
+  public void setUser_solution(String user_solution) {
+    this.user_solution = user_solution;
+  }
+
+  public Date getCreatedAt() {
+    return createdAt;
+  }
+
+  public void setCreatedAt(Date createdAt) {
+    this.createdAt = createdAt;
+  }
+
+  public Date getUpdatedAt() {
+    return updatedAt;
+  }
+
+  public void setUpdatedAt(Date updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
+  public User getUser() {
+    return user;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
+  }
+
+  public Problem getProblem() {
+    return problem;
+  }
+
+  public void setProblem(Problem problem) {
+    this.problem = problem;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  // end
 }

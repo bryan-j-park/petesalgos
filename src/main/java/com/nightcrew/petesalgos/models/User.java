@@ -143,6 +143,30 @@ import org.springframework.format.annotation.DateTimeFormat;
 		public void setUpdatedAt(Date updatedAt) {
 			this.updatedAt = updatedAt;
 		}
+
+		public List<Problem> getProblem() {
+			return problem;
+		}
+
+		public void setProblem(List<Problem> problem) {
+			this.problem = problem;
+		}
+
+		public List<Problem> getFavorites() {
+			return favorites;
+		}
+
+		public void setFavorites(List<Problem> favorites) {
+			this.favorites = favorites;
+		}
+
+		public List<Problem> getProblems() {
+			return problems;
+		}
+
+		public void setProblems(List<Problem> problems) {
+			this.problems = problems;
+		}
 		
 		
 	    

@@ -38,9 +38,18 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><a href="">algo name</a></td>
-                    <td>easy</td>
-                    <td>link or whatever</td>
+                    <c:forEach var="problems"  items="${problemList}">
+
+                        <td> <c:out value="${problems.number}"/></td>
+
+                        <td><a href="/display/problem/${problems.id}"><c:out value="${problems.name}"/></a></td>
+
+                        <td><c:out value="${problems.datatype}"/></td>
+
+                        <td><c:out value="${problems.difficulty}"/></td>
+
+                    </c:forEach>
+
                 </tr>
             </tbody>
         </table>
