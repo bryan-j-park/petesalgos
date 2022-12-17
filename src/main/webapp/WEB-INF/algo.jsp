@@ -28,6 +28,7 @@
     </header>
     <main>
         <h2>${problem.number}. ${problem.name}</h2>
+        <p><a href="${problem.leetcodeLink}">View On LeetCode</a></p>
         <pre>${problem.question}</pre>
         <br><br>
 

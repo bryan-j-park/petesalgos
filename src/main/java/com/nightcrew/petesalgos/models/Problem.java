@@ -42,6 +42,10 @@ public class Problem{
   private String datatype;
   @NotNull
   private Long number;
+
+  @NotNull
+  @Size
+  private String leetcodeLink;
   
   @NotNull
   @Lob
@@ -179,6 +183,12 @@ public class Problem{
     this.description = description;
   }
 
-  
+  public String getLeetcodeLink() {
+    return leetcodeLink;
+  }
+
+  public void setLeetcodeLink(String leetcodeLink) {
+    this.leetcodeLink = leetcodeLink;
+  }
 
 }
