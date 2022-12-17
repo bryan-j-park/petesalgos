@@ -23,33 +23,45 @@
         </div>
     </header>
     <main>
-        <form:form action = "/testform" method = "POST" modelAttribute ="problem" class="addForm">
+        <form:form action = "/problem/new" method = "POST" modelAttribute ="problem" class="addForm">
 		<p class="formSpacing">
-			<form:label path = "name">name:</form:label>
+			<form:label path = "name">Name:</form:label>
 			<form:input path = "name"/>
 			<form:errors path = "name" class="formErrors"/>
 		</p>
 		
 		<p class="formSpacing">
-			<form:label path = "difficulty">difficulty:</form:label>
+			<form:label path = "difficulty">Difficulty:</form:label>
 			<form:input path = "difficulty"/>
 			<form:errors path = "difficulty" class="formErrors"/>
 		</p>
 		
 		<p class="formSpacing">
-			<form:label path = "datatype">datatype:</form:label>
+			<form:label path = "datatype">Datatype:</form:label>
 			<form:input path = "datatype"/>
 			<form:errors path = "datatype" class="formErrors"/>
 		</p>
 		
-        <p class="formSpacing">
-			<form:label path = "number">number:</form:label>
+    <p class="formSpacing">
+			<form:label path = "number">Number:</form:label>
 			<form:input path = "number"/>
 			<form:errors path = "number" class="formErrors"/>
 		</p>
 
-        <p class="formSpacing">
-			<form:label path = "code">code:</form:label>
+		<p class="formSpacing">
+			<form:label path = "question">Question:</form:label>
+			<form:textarea path = "question"/>
+			<form:errors path = "question" class="formErrors"/>
+		</p>
+
+		<p class="formSpacing">
+			<form:label path = "description">Description:</form:label>
+			<form:textarea path = "description"/>
+			<form:errors path = "description" class="formErrors"/>
+		</p>
+
+    <p class="formSpacing">
+			<form:label path = "code">Code:</form:label>
 			<form:textarea path = "code"/>
 			<form:errors path = "code" class="formErrors"/>
 		</p>

@@ -35,7 +35,7 @@
                     <th>Problem</th>
                     <th>Datatype</th>
                     <th>Difficulty</th>
-
+                    <th>Add to Favorites</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,7 +44,7 @@
 
                         <td> <c:out value="${problems.number}"/></td>
 
-                        <td><a href="/display/problem/${problems.id}"><c:out value="${problems.name}"/></a></td>
+                        <td><a href="/algo/${problems.id}"><c:out value="${problems.name}"/></a></td>
 
                         <td><c:out value="${problems.datatype}"/></td>
 
@@ -69,6 +69,7 @@
                     <th>Problem</th>
                     <th>Datatype</th>
                     <th>Difficulty</th>
+                    <th>Add to Favorites</th>
 
                 </tr>
             </thead>

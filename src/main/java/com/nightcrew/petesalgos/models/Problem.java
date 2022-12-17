@@ -32,14 +32,13 @@ public class Problem{
   @NotNull
   private String difficulty;
   @NotNull
-  @Size(min = 3, message="question must be entered")
+  @Lob
   private String question;
   @NotNull
-  @Size(min = 3, message="description must be entered")
+  @Lob
   private String description;
   @NotNull
-  @NotNull
-  @Size(min = 5, message="field must be at least 5 characters")
+  @Size(min = 2, message="field must be at least 2 characters")
   private String datatype;
   @NotNull
   private Long number;
