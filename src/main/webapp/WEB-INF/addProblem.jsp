@@ -60,6 +60,12 @@
 			<form:errors path = "description" class="formErrors"/>
 		</p>
 
+		<p class="formSpacing">
+			<form:label path = "leetcodeLink">LeetCode Link:</form:label>
+			<form:input path = "leetcodeLink"/>
+			<form:errors path = "leetcodeLink" class="formErrors"/>
+		</p>
+
     <p class="formSpacing">
 			<form:label path = "code">Code:</form:label>
 			<form:textarea path = "code"/>
