@@ -71,7 +71,7 @@ public class UserService {
 		
         }
 
-public User oneUser(Long id){
+public User getOneUser(Long id){
 	Optional<User> optionalUser = userRepo.findById(id);
 	if(optionalUser.isPresent()){
 		return optionalUser.get();
@@ -80,11 +80,6 @@ public User oneUser(Long id){
 		return null;
 	}
 }
-
-public Object getFavorites() {
-	return null;
-}
-
 
 
 
