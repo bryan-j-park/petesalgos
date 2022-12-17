@@ -32,18 +32,19 @@ public class DashboardController {
 
 
 @GetMapping("/dashboard")
-public String dashboard( Model model){
+public String dashboard(HttpSession session, Model model){
   
-  // Boolean userSession = session.getAttribute("userId") == null; 
+  Boolean userSession = session.getAttribute("userId") == null; 
 
-  // if(userSession){
-  //   return "redirect:/logout";
-  // }
-  // else{
+  if(userSession){
+    return "redirect:/logout";
+  }
+  else{
     // if user in session, pass to dashboard page showing problems
     model.addAttribute("problemList", problemService.allProblems());
+    model.addAttribute("favList", userService.getFavorites());
     return "dashboard.jsp";
-  // }
+  }
 }
 
 // Display page
@@ -65,22 +66,22 @@ public String displayProblem(@PathVariable("id")Long id,Model model, HttpSession
   }
 }
 
-// // Fav btn code
-// @PutMapping("/favorites/{id}/receive")
-// public String favoriteProblem(@PathVariable("id")Long problemId){
+// Fav btn code
+@PutMapping("/favorites/{id}/receive")
+public String favoriteProblem(@PathVariable("id")Long problemId,HttpSession session){
 
-// // Long userId = (Long) session.getAttribute("userId");
-// // User loggedInUser = userService.oneUser(userId);
+Long userId = (Long) session.getAttribute("userId");
+User loggedInUser = userService.oneUser(userId);
 
-// Problem problem = problemService.getProblem(problemId);
+Problem problem = problemService.getProblem(problemId);
 
-// problemService.favoriteProblem(null, problem);
-
-
+problemService.favoriteProblem(loggedInUser, problem);
 
 
-//   return "redirect:/dashboard";
-// }
+
+
+  return "redirect:/dashboard";
+}
 
 
 }
