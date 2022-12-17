@@ -27,17 +27,19 @@
         </div>
     </header>
     <main>
-        <h2>1. Title of Problem</h2>
-        <pre>insert problem here</pre>
+        <h2>${problem.number}. ${problem.name}</h2>
+        <pre>${problem.question}</pre>
         <br><br>
 
         <div class="solution">
         <pre>
             <code>
-            Lorem ipsum dolor sit ametconsectetur adipisicing elit. Dolorum, esseofficiis dolores incidunt expedita exercitationem. Facilis placeat doloremque sit ullam, tenetur debitis libero, nesciunt totam fugit odio sint nisi eius!
+                ${problem.code}
             </code>
         </pre>
         </div>
+
+        <pre>${problem.description}</pre>
 
     </main>
 </body>
