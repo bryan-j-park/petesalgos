@@ -55,16 +55,16 @@ public void deleteProblem(Long id) {
 }
 
 
-// // Fav btn code
-// public void favoriteProblem(User user, Problem problem){
-// //  if(problem.getFavorited() == null){
-// //   problem.getFavorited() = new ArrayList<Problem>();
-// //  }
+// Fav btn code
+public void favoriteProblem(User user, Problem problem){
+//  if(problem.getFavorited() == null){
+//   problem.getFavorited() = new ArrayList<Problem>();
+//  }
 
 
-//   problem.getFavorited().add(user);
-//   problemRepo.save(problem);
-// }
+  problem.getFavorited().add(user);
+  problemRepo.save(problem);
+}
 
 
 

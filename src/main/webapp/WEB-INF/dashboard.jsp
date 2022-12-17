@@ -50,13 +50,45 @@
 
                         <td><c:out value="${problems.difficulty}"/></td>
 
-                       <td><button>Add to favorites</button></td>
+                       <td>
+                        <form action="/favorites/${problems.id}/receive" method="post">
+                            <input type="hidden" name="_method" value="put" />
+                            <button type="submit">Add To Favorites</button>
+                        </form>
+                    </td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Problem</th>
+                    <th>Datatype</th>
+                    <th>Difficulty</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach var="favorites"  items="${favList}">
+                <tr>
+
+                        <td> <c:out value="${favorites.number}"/></td>
+
+                        <td><a href="/display/problem/${problems.id}"><c:out value="${favorites.name}"/></a></td>
+
+                        <td><c:out value="${favorites.datatype}"/></td>
+
+                        <td><c:out value="${favorites.difficulty}"/></td>
                     </tr>
                 </c:forEach>
             </tbody>
         </table>
          
-        <form action></form>
+        
 
 
     </main>
