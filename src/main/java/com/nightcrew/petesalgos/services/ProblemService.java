@@ -1,5 +1,6 @@
 package com.nightcrew.petesalgos.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,8 +58,10 @@ public void deleteProblem(Long id) {
 
 // Fav btn code
 public void favoriteProblem(User user, Problem problem){
+
 //  if(problem.getFavorited() == null){
-//   problem.getFavorited() = new ArrayList<Problem>();
+//   ArrayList<Problem> problem.getFavorited() = new ArrayList<Problem>();
+
 //  }
 
 

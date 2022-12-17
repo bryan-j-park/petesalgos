@@ -1,5 +1,8 @@
 package com.nightcrew.petesalgos.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +33,25 @@ public class DashboardController {
       return "redirect:/";
     }
     else{
-    model.addAttribute("problemList", problemService.allProblems());
+      // if user is logged in, gets userId from session and uses it to get the user object.
+      Long userId = (Long) session.getAttribute("userId");
+      User loggedInUser = userService.getOneUser(userId);
+
+      // gets a list of all the problems from problemService and creates an empty list of favorite Problem.
+    List<Problem> allProblems = problemService.allProblems();
+    List<Problem> favoriteProblem = new ArrayList<>();
+
+// iterates over the all problem list of allProblems and checks id the logged in user has favorited each problem.
+// If a problem has been favorited by the logged-in user, it is added to the list of favorite problem.
+    for(Problem problem : allProblems){
+      if(problem.getFavorited().contains(loggedInUser)){
+        favoriteProblem.add(problem);
+      }
+    }
+
+
+    model.addAttribute("problemList", allProblems);
+    model.addAttribute("favList", favoriteProblem);
     return "dashboard.jsp";
     }
   }
