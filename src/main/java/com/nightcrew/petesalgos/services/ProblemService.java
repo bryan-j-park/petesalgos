@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.nightcrew.petesalgos.models.Problem;
+import com.nightcrew.petesalgos.models.User;
 import com.nightcrew.petesalgos.repositories.ProblemRepository;
 
 @Service
@@ -54,6 +55,16 @@ public void deleteProblem(Long id) {
 }
 
 
+// // Fav btn code
+// public void favoriteProblem(User user, Problem problem){
+// //  if(problem.getFavorited() == null){
+// //   problem.getFavorited() = new ArrayList<Problem>();
+// //  }
+
+
+//   problem.getFavorited().add(user);
+//   problemRepo.save(problem);
+// }
 
 
 

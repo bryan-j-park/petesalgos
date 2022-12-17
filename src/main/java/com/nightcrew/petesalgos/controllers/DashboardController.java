@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.nightcrew.petesalgos.models.Problem;
+import com.nightcrew.petesalgos.models.User;
 import com.nightcrew.petesalgos.services.ProblemService;
 import com.nightcrew.petesalgos.services.UserService;
 
@@ -31,18 +32,18 @@ public class DashboardController {
 
 
 @GetMapping("/dashboard")
-public String dashboard( HttpSession session, Model model){
+public String dashboard( Model model){
   
-  Boolean userSession = session.getAttribute("userId") == null; 
+  // Boolean userSession = session.getAttribute("userId") == null; 
 
-  if(userSession){
-    return "redirect:/logout";
-  }
-  else{
+  // if(userSession){
+  //   return "redirect:/logout";
+  // }
+  // else{
     // if user in session, pass to dashboard page showing problems
     model.addAttribute("problemList", problemService.allProblems());
     return "dashboard.jsp";
-  }
+  // }
 }
 
 // Display page
@@ -63,6 +64,23 @@ public String displayProblem(@PathVariable("id")Long id,Model model, HttpSession
     return "displayProblem.jsp";
   }
 }
+
+// // Fav btn code
+// @PutMapping("/favorites/{id}/receive")
+// public String favoriteProblem(@PathVariable("id")Long problemId){
+
+// // Long userId = (Long) session.getAttribute("userId");
+// // User loggedInUser = userService.oneUser(userId);
+
+// Problem problem = problemService.getProblem(problemId);
+
+// problemService.favoriteProblem(null, problem);
+
+
+
+
+//   return "redirect:/dashboard";
+// }
 
 
 }

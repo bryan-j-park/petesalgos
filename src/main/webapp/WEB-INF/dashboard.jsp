@@ -31,14 +31,16 @@
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th>Number</th>
+                    <th>Problem</th>
+                    <th>Datatype</th>
                     <th>Difficulty</th>
-                    <th>Leetcode link?</th>
+
                 </tr>
             </thead>
             <tbody>
+                <c:forEach var="problems"  items="${problemList}">
                 <tr>
-                    <c:forEach var="problems"  items="${problemList}">
 
                         <td> <c:out value="${problems.number}"/></td>
 
@@ -48,11 +50,15 @@
 
                         <td><c:out value="${problems.difficulty}"/></td>
 
-                    </c:forEach>
-
-                </tr>
+                       <td><button>Add to favorites</button></td>
+                    </tr>
+                </c:forEach>
             </tbody>
         </table>
+         
+        <form action></form>
+
+
     </main>
 </body>
 </html>
