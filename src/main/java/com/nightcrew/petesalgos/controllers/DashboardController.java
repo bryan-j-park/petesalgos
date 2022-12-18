@@ -38,7 +38,7 @@ public class DashboardController {
       // if user is logged in, gets userId from session and uses it to get the user object.
       Long userId = (Long) session.getAttribute("userId");
       User loggedInUser = userService.getOneUser(userId);
-
+      model.addAttribute("user", loggedInUser);
       // gets a list of all the problems from problemService and creates an empty list of favorite Problem.
     List<Problem> allProblems = problemService.allProblems();
     List<Problem> favoriteProblem = new ArrayList<>();

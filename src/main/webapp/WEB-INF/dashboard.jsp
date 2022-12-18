@@ -73,7 +73,7 @@
             </table>
             
             <div class="profile">
-                <h2>insert current user name</h2>
+                <h2>${user.userName}</h2>
                 <div class="line"></div>
                 <c:forEach var="favorites"  items="${favList}">
                 <ul>
