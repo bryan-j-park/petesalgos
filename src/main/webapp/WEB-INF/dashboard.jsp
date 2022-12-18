@@ -60,20 +60,36 @@
                             <td><c:out value="${problem.datatype}"/></td>
 
                             <td><c:out value="${problem.difficulty}"/></td>
+                            <!-- remove/Add favorite btn -->
+                        <c:choose>
+                            <c:when test="${problem.favorited.contains(user)}">
+                                <!-- favorited referring to the list in the problem model -->
+                            <td>
+                                <form action="/favorites/${problem.id}/delete" method="post">
+                                    <input type="hidden" name="_method" value="put" />
+                                    <button type="submit">Remove Favorite</button>
+                                </form>
 
-                        <td>
-                            <form action="/favorites/${problem.id}/receive" method="post">
-                                <input type="hidden" name="_method" value="put" />
-                                <button type="submit">Add To Favorites</button>
-                            </form>
-                        </td>
-                        </tr>
+                            </td>
+                        </c:when>
+
+                        <c:otherwise>
+                            <td>
+                                    <form action="/favorites/${problem.id}/receive" method="post">
+                                        <input type="hidden" name="_method" value="put" />
+                                        <button type="submit">Add To Favorites</button>
+                                    </form>
+
+                                </td>
+                            </c:otherwise>
+                        </c:choose>
+                    </tr>
                     </c:forEach>
                 </tbody>
             </table>
             
             <div class="profile">
-                <h2>${user.userName}</h2>
+                <h2>Your Favorites: ${user.userName}</h2>
                 <div class="line"></div>
                 <c:forEach var="favorites"  items="${favList}">
                 <ul>

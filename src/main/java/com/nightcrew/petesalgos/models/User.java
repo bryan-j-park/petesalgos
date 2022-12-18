@@ -76,7 +76,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 			inverseJoinColumns = @JoinColumn(name = "problem_id")
 		)
 		private List<Problem> problemsSolved;
-		
 		@ManyToMany(fetch = FetchType.LAZY)
 		@JoinTable(
 			name = "favorites",
