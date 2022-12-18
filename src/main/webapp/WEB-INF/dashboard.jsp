@@ -33,6 +33,7 @@
             <table>
                 <thead>
                     <tr>
+                        <th>Solved</th>
                         <th>Number</th>
                         <th>Problem</th>
                         <th>Datatype</th>
@@ -41,19 +42,27 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach var="problems"  items="${problemList}">
+                    <c:forEach var="problem"  items="${problemList}">
                     <tr>
+                        <c:choose>
+                            <c:when test="${solvedProblemIds.contains(problem.id)}">
+                                <td>Solved</td>
+                            </c:when>
+                            <c:otherwise>
+                                <td>-s-</td>
+                            </c:otherwise>
+                        </c:choose>
 
-                            <td> <c:out value="${problems.number}"/></td>
+                            <td> <c:out value="${problem.number}"/></td>
 
-                            <td><a href="/algo/${problems.id}"><c:out value="${problems.name}"/></a></td>
+                            <td><a href="/algo/${problem.id}"><c:out value="${problem.name}"/></a></td>
 
-                            <td><c:out value="${problems.datatype}"/></td>
+                            <td><c:out value="${problem.datatype}"/></td>
 
-                            <td><c:out value="${problems.difficulty}"/></td>
+                            <td><c:out value="${problem.difficulty}"/></td>
 
                         <td>
-                            <form action="/favorites/${problems.id}/receive" method="post">
+                            <form action="/favorites/${problem.id}/receive" method="post">
                                 <input type="hidden" name="_method" value="put" />
                                 <button type="submit">Add To Favorites</button>
                             </form>
@@ -69,7 +78,7 @@
                 <c:forEach var="favorites"  items="${favList}">
                 <ul>
                     <li>
-                        <a href="/display/problem/${problems.id}"><c:out value="${favorites.name}"/></a>
+                        <a href="/display/problem/${problem.id}"><c:out value="${favorites.name}"/></a>
                     </li>
                 </ul>
                 </c:forEach>
@@ -92,7 +101,7 @@
 
                             <td> <c:out value="${favorites.number}"/></td>
 
-                            <td><a href="/display/problem/${problems.id}"><c:out value="${favorites.name}"/></a></td>
+                            <td><a href="/display/problem/${problem.id}"><c:out value="${favorites.name}"/></a></td>
 
                             <td><c:out value="${favorites.datatype}"/></td>
 

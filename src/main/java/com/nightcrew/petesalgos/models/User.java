@@ -68,6 +68,14 @@ import org.springframework.format.annotation.DateTimeFormat;
       //joining person with License as a 1:n
 		@OneToMany(mappedBy="user", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 		private List<Problem> problem;
+
+		@ManyToMany(fetch = FetchType.LAZY)
+		@JoinTable(
+			name = "solved",
+			joinColumns = @JoinColumn(name = "user_id"),
+			inverseJoinColumns = @JoinColumn(name = "problem_id")
+		)
+		private List<Problem> problemsSolved;
 		
 		@ManyToMany(fetch = FetchType.LAZY)
 		@JoinTable(
@@ -168,7 +176,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 			this.problems = problems;
 		}
 	
+		public List<Problem> getProblemsSolved() {
+			return problemsSolved;
+		}
+
+		public void setProblemsSolved(List<Problem> problemsSolved) {
+			this.problemsSolved = problemsSolved;
+		}
 		
-	    
-	    
 }

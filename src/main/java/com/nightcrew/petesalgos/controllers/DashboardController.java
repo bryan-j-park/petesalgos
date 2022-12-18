@@ -1,7 +1,9 @@
 package com.nightcrew.petesalgos.controllers;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpSession;
 
@@ -52,6 +54,14 @@ public class DashboardController {
 
     model.addAttribute("problemList", allProblems);
     model.addAttribute("favList", favoriteProblem);
+
+// ================== Get Solved Problems By User Id ============
+    List<Problem> solvedProblems = loggedInUser.getProblemsSolved();
+    Set<Long> solvedProblemIds = new HashSet<>();
+    for(Problem problem : solvedProblems){
+      solvedProblemIds.add(problem.getId());
+    }
+    model.addAttribute("solvedProblemIds", solvedProblemIds);
     return "dashboard.jsp";
     }
   }
