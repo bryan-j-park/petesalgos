@@ -30,12 +30,15 @@ public class Problem{
   @Size(min = 3, message="name must be entered")
   private String name;
   @NotNull
+  @Size(min = 1, message = "difficulty must be at least 1 character")
   private String difficulty;
   @NotNull
   @Lob
+  @Size(min = 1, message="question must be at least 1 character")
   private String question;
   @NotNull
   @Lob
+  @Size(min = 1, message = "description must be at least 1 character")
   private String description;
   @NotNull
   @Size(min = 2, message="field must be at least 2 characters")
@@ -44,11 +47,12 @@ public class Problem{
   private Long number;
 
   @NotNull
-  @Size
+  @Size(min = 1, message="LeetCode Link must be at least 1 character")
   private String leetcodeLink;
   
   @NotNull
   @Lob
+  @Size(min = 2, message = "code must be at least 2 characters")
   private String code;
 //    joining user table 
   
