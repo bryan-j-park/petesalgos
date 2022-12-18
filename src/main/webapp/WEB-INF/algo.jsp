@@ -27,6 +27,21 @@
         </div>
     </header>
     <main>
+        <p>Status:</p>
+        <c:choose>
+            <c:when test="${solvedProblemIds.contains(problem.id)}">
+                <form action="/delete/${userId}/${problem.id}" method="POST">
+                    <input type="hidden" name="_method" value="delete"/>
+                    <input type="submit" value="Solved" class=""/>
+                </form>
+            </c:when>
+            <c:otherwise>
+                <form action="/solved/${userId}/${problem.id}" method="POST">
+                    <input type="submit" value="Not Solved">
+                </form>
+            </c:otherwise>
+        </c:choose>
+
         <h2>${problem.number}. ${problem.name}</h2>
         <p><a href="${problem.leetcodeLink}">View On LeetCode</a></p>
         <pre>${problem.question}</pre>

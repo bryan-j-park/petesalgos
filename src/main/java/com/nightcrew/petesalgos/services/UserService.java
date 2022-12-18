@@ -2,8 +2,6 @@ package com.nightcrew.petesalgos.services;
 
 import java.util.Optional;
 
-import javax.servlet.http.HttpSession;
-
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -81,7 +79,13 @@ public User getOneUser(Long id){
 	}
 }
 
+	public void addSolvedProblem(Long userId, Long problemId){
+		userRepo.addSolvedProblem(userId, problemId);
+	}
 
+	public void deleteSolvedProblem(Long userId, Long problemId){
+		userRepo.deleteSolvedProblem(userId, problemId);
+	}
 
 
 
