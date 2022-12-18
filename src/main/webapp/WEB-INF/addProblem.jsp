@@ -32,19 +32,34 @@
 		
 		<p>
 			<form:label path = "difficulty">Difficulty:</form:label>
-			<form:input path = "difficulty"/>
+			<form:select path = "difficulty">
+				<form:option value="easy">Easy</form:option>
+				<form:option value="medium">Medium</form:option>
+				<form:option value="hard">Hard</form:option>
+			</form:select>
 			<form:errors path = "difficulty"/>
 		</p>
 		
 		<p>
 			<form:label path = "datatype">Datatype:</form:label>
-			<form:input path = "datatype"/>
+			<form:select path="datatype">
+				<form:option value="hash">Hash Function</form:option>
+				<form:option value="binary indexed tree">Binary Indexed Tree</form:option>
+				<form:option value="string matching">String Matching</form:option>
+				<form:option value="shortest path">Shortest Path</form:option>
+				<form:option value="merge sort">Merge Sort</form:option>
+				<form:option value="doubly linked list">Doubly-Linked List</form:option>
+				<form:option value="probability">Probability</form:option>
+				<form:option value="array">Array</form:option>
+				<form:option value="sort algorithms">Sort Algorithm</form:option>
+				<form:option value="other">Other</form:option>
+			</form:select>
 			<form:errors path = "datatype"/>
 		</p>
 		
         <p>
 			<form:label path = "number">Number:</form:label>
-			<form:input path = "number"/>
+			<form:input type = "number" path = "number"/>
 			<form:errors path = "number"/>
 		</p>
 
