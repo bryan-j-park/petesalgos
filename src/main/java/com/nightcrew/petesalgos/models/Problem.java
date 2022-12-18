@@ -63,7 +63,15 @@ public class Problem{
   @ManyToOne(fetch=FetchType.LAZY)
   @JoinColumn(name="user_id")
   private User user;
-  
+
+  @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(
+    name = "solved",
+    joinColumns = @JoinColumn(name = "problem_id"),
+    inverseJoinColumns = @JoinColumn(name = "user_id")
+  )
+  private List<User> usersSolved;
+
   @ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(
 			name = "favorites",
@@ -189,6 +197,14 @@ public class Problem{
 
   public void setLeetcodeLink(String leetcodeLink) {
     this.leetcodeLink = leetcodeLink;
+  }
+
+  public List<User> getUsersSolved() {
+    return usersSolved;
+  }
+
+  public void setUsersSolved(List<User> usersSolved) {
+    this.usersSolved = usersSolved;
   }
 
 }
