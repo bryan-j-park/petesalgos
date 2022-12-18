@@ -63,9 +63,14 @@ public void favoriteProblem(User user, Problem problem){
 //   ArrayList<Problem> problem.getFavorited() = new ArrayList<Problem>();
 
 //  }
-
-
   problem.getFavorited().add(user);
+  problemRepo.save(problem);
+}
+
+// delete Favorite Problem
+
+public void deleteFav(User user, Problem problem){
+  problem.getFavorited().remove(user);
   problemRepo.save(problem);
 }
 

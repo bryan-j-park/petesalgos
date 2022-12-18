@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -65,7 +66,6 @@ public class DashboardController {
     return "dashboard.jsp";
     }
   }
-// hello
 // =============== Favorite Button Code ==========================
   @PutMapping("/favorites/{id}/receive")
   public String favoriteProblem(@PathVariable("id")Long problemId,HttpSession session){
@@ -76,5 +76,14 @@ public class DashboardController {
     return "redirect:/dashboard";
   }
 
+// =============== Remove Favorite Button Code ==========================
 
+  @PutMapping("/favorites/{id}/delete")
+  public String deleteFavProblem(@PathVariable("id")Long problemId,HttpSession session){
+    Long userId = (Long) session.getAttribute("userId");
+    User loggedInUser = userService.getOneUser(userId);
+    Problem problem = problemService.getProblem(problemId);
+    problemService.deleteFav(loggedInUser, problem);
+    return "redirect:/dashboard";
+  }
 }
