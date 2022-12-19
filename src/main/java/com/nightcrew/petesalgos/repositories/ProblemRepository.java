@@ -2,6 +2,10 @@ package com.nightcrew.petesalgos.repositories;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import javax.transaction.Transactional;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,4 +18,11 @@ public interface ProblemRepository extends CrudRepository<Problem, Long> {
 
   List<Problem> findProblemById(Long userId);
  
+
+  @Transactional
+  @Modifying
+  @Query(value = "SELECT * FROM problems WHERE datatype = :datatype",
+  nativeQuery = true)
+  List<Problem> sortDatatype(
+    @Param("datatype") String datatype);
 }

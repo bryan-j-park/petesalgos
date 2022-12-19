@@ -21,6 +21,13 @@ public class ProblemService {
   public List<Problem> allProblems(){
     return problemRepo.findAll();
   }
+
+
+  // List all sorted by datatype
+  public List<Problem> sortDataType(String datatype){
+    return problemRepo.sortDatatype(datatype);
+  }
+
   //Create problem
   
   public Problem createProblem(Problem problem) {
