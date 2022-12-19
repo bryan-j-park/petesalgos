@@ -73,7 +73,16 @@
             
             <p class="">
                 <form:label path = "user_solution">Solution (Optional):</form:label>
-                <form:textarea path = "user_solution"/>
+                <!-- <form:textarea path = "user_solution"/> -->
+                <div class="container">
+                    <div class="editor">
+                        <div class="editor__wrapper">
+                            <div class="editor__body">
+                                <div id="editorCode" class="editor__code"><form:input type="text" path = "user_solution"/></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <form:errors path = "user_solution" style="color:red"/>
             </p>
             
@@ -83,27 +92,10 @@
             <button type="submit">Add Comment</button>
         </form:form>
 
-        <!-- <div class="editor">
-            <div class="editor__wrapper">
-                <div class="editor__body">
-                    <div id="editorCode" class="editor__code"></div>
-                </div>
-                <div class="editor__footer">
-                    <div class="editor__footer--left">
-                        <button class="editor__btn editor__run">Run ></button>
-                        <button class="editor__btn editor__reset">Reset ></button>
-                    </div>
-                    <div class="editor__footer--right">
-                        <div class="editor__console">
-                            <ul class="editor__console-logs"></ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    
 
     <script src="/js/ace-editor/src-min/ace.js"></script>
     <script src="/js/ace-editor/src-min/mode-javascript.js"></script>
-    <script src="/js/editor.js"></script> -->
+    <script src="/js/editor.js"></script>
 </body>
 </html>
