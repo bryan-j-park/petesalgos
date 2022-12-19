@@ -5,17 +5,25 @@ import java.util.List;
 import java.util.Set;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.nightcrew.petesalgos.models.Comment;
 import com.nightcrew.petesalgos.models.Problem;
 import com.nightcrew.petesalgos.models.User;
+import com.nightcrew.petesalgos.repositories.ProblemRepository;
+import com.nightcrew.petesalgos.repositories.UserRepository;
+import com.nightcrew.petesalgos.services.CommentService;
 import com.nightcrew.petesalgos.services.ProblemService;
 import com.nightcrew.petesalgos.services.UserService;
 
@@ -27,9 +35,16 @@ public class MainController {
   @Autowired
   private UserService userService;
 
+  @Autowired
+  private UserRepository userRepo;
+
+  @Autowired
+  private CommentService commentService;
+
 // ============== Display Algo By Id ==================
   @GetMapping("/algo/{id}")
-  public String algo(@PathVariable("id") Long id, Model model, HttpSession session) {
+  public String algo(@ModelAttribute("comment") Comment comment, 
+      @PathVariable("id") Long id, Model model, HttpSession session) {
     Boolean notInSession = session.getAttribute("userId") == null;
     if(notInSession){
       return "redirect:/";
@@ -46,6 +61,10 @@ public class MainController {
       solvedProblemIds.add(algo.getId());
     }
     model.addAttribute("solvedProblemIds", solvedProblemIds);
+    
+    // ================= Comment Section =====================
+    
+
     return "algo.jsp";
     }
   }
@@ -61,7 +80,7 @@ public class MainController {
     if(!session.getAttribute("userId").equals(userId)){
       return "algo.jsp";
     }
-    userService.addSolvedProblem(userId, problemId);
+    userRepo.addSolvedProblem(userId, problemId);
     return "redirect:/dashboard";
   }
 
@@ -69,7 +88,25 @@ public class MainController {
   @DeleteMapping("/delete/{userId}/{problemId}")
   public String deleteSolvedProblem(@PathVariable("userId") Long userId, 
       @PathVariable("problemId") Long problemId){
-    userService.deleteSolvedProblem(userId, problemId);
+    userRepo.deleteSolvedProblem(userId, problemId);
+    return "redirect:/dashboard";
+  }
+
+// =================== Add Comment ======================
+  @PostMapping("/add/comment")
+  public String addComment(@Valid @ModelAttribute("comment") Comment comment, 
+      BindingResult result, Model model, HttpSession session){
+    Boolean notInSession = session.getAttribute("userId") == null; 
+    if(notInSession){
+      return "redirect:/";
+    }
+    if(!session.getAttribute("userId").equals(comment.getUser().getId())){
+      return "algo.jsp";
+    }
+    if(result.hasErrors()){
+      return "algo.jsp";
+    }
+    commentService.createComment(comment);
     return "redirect:/dashboard";
   }
 

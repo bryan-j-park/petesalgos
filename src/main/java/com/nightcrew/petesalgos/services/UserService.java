@@ -79,14 +79,4 @@ public User getOneUser(Long id){
 	}
 }
 
-	public void addSolvedProblem(Long userId, Long problemId){
-		userRepo.addSolvedProblem(userId, problemId);
-	}
-
-	public void deleteSolvedProblem(Long userId, Long problemId){
-		userRepo.deleteSolvedProblem(userId, problemId);
-	}
-
-
-
 }

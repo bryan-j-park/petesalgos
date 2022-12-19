@@ -57,6 +57,24 @@
 
         <pre>${problem.description}</pre>
 
+        <form:form action="/add/comment" method="POST" modelAttribute="comment">
+            <p class="">
+                <form:label path = "comment">Comment:</form:label>
+                <form:textarea path = "comment"/>
+                <form:errors path = "comment" class=""/>
+            </p>
+
+            <p class="">
+                <form:label path = "user_solution">Solution (Optional):</form:label>
+                <form:textarea path = "user_solution"/>
+                <form:errors path = "user_solution" class=""/>
+            </p>
+
+            <input type="hidden" path="user" value="${userId}"/>
+            <input type="hidden" path="problem" value="${problem.id}"/>
+
+            <input type="submit" value="Add Comment"/>
+        </form:form>
     </main>
 </body>
 </html>
