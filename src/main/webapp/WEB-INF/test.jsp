@@ -16,6 +16,79 @@
     <link rel="manifest" href="/imgs/site.webmanifest">
 </head>
 <body>
+    <header>
+        <nav>
+            <img src="/imgs/pete2.png" width="100px;">
+            <h1>Pete's Algos</h1>
+        </nav>
+        <div class="links">
+            <h2><a href="/dashboard">problems</a></h2>
+            <h2><a href="/logout">logout</a></h2>
+        </div>
+    </header>
+    <main>
+        <h1>All Algos</h1>
+        <section class="main">
 
+            <table>
+                <thead>
+                    <tr>
+                        <th>Solved</th>
+                        <th>Number</th>
+                        <th>Problem</th>
+                        <th>Datatype</th>
+                        <th>Difficulty</th>
+                        <th>Add to Favorites</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <c:forEach var="problem"  items="${datatype}">
+                    <tr>
+
+                            <td> <c:out value="${problem.number}"/></td>
+
+                            <td><c:out value="${problem.name}"/></td>
+
+                            <td><c:out value="${problem.datatype}"/></td>
+
+                            <td><c:out value="${problem.difficulty}"/></td>
+                            <!-- remove/Add favorite btn -->
+                    </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+
+            <!-- <table class="favorites">
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Problem</th>
+                        <th>Datatype</th>
+                        <th>Difficulty</th>
+                        <th>Add to Favorites</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach var="favorites"  items="${favList}">
+                    <tr>
+
+                            <td> <c:out value="${favorites.number}"/></td>
+
+                            <td><a href="/display/problem/${problem.id}"><c:out value="${favorites.name}"/></a></td>
+
+                            <td><c:out value="${favorites.datatype}"/></td>
+
+                            <td><c:out value="${favorites.difficulty}"/></td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table> -->
+        </section>
+        
+
+
+    </main>
 </body>
 </html>

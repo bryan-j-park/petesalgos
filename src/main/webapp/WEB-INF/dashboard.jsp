@@ -27,6 +27,9 @@
         </div>
     </header>
     <main>
+        <button><a href="/sort/array">Array</a></button>
+        <button><a href="/sort/binary tree">Binary Tree</a></button>
+        <button><a href="/sort/binary search tree">Binary Search Tree</a></button>
         <h1>All Algos</h1>
         <section class="main">
 

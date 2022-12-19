@@ -85,4 +85,22 @@ public class DashboardController {
     problemService.deleteFav(loggedInUser, problem);
     return "redirect:/dashboard";
   }
+
+  // ================= Sort DataType ===================
+  @GetMapping("/sort/{datatype}")
+  public String sortByDatatype(@PathVariable("datatype") String datatype,Model model, HttpSession session){
+    Boolean notInSession = session.getAttribute("userId") == null; 
+    if(notInSession){
+      return "redirect:/";
+    }
+    else{
+      List<Problem> sortDataType = problemService.sortDataType(datatype);
+
+      model.addAttribute("datatype", sortDataType);
+
+    return "test.jsp";
+  }
+
+
+}
 }
