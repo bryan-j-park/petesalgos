@@ -94,7 +94,7 @@
                 <c:forEach var="favorites"  items="${favList}">
                 <ul>
                     <li>
-                        <a href="/display/problem/${problem.id}"><c:out value="${favorites.name}"/></a>
+                        <a href="/algo/${favorites.id}"><c:out value="${favorites.name}"/></a>
                     </li>
                 </ul>
                 </c:forEach>
