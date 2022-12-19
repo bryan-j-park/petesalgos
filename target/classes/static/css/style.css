@@ -40,18 +40,23 @@ h2 {
     justify-content: space-between;
 }
 
-pre {
+/* pre {
     white-space: pre-wrap;
-}
+} */
 
 code {
     background-color: #E3E2DD;
 }
 
 .solution {
-    width: 60%;
-    background-color: #E3E2DD;
+    width:inherit;
     overflow: auto;
+    margin: 25px auto;
+}
+
+.solution-code {
+    background-color: #E3E2DD;
+    padding: 20px;
 }
 
 a {
@@ -62,6 +67,11 @@ a {
 a:hover {
     color:#9D808E;
     text-decoration: underline;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    margin: 10px 0;
 }
 
 main {
@@ -110,7 +120,7 @@ tbody tr:nth-child(even) {
 
 form {
     width:70%;
-    padding: 20px;
+    padding: 20px 0;
 }
 
 label {
@@ -122,6 +132,16 @@ input{
     padding:10px;
     width:100%;
     border-radius: 10px;
+}
+
+select {
+    width: 100%;
+    padding:10px;
+    border-radius: 10px;
+}
+
+option {
+    padding:10px;
 }
 
 textarea {
@@ -145,3 +165,70 @@ button:hover {
     background-color: #0A2463;
     color: #fff;
 }
+
+/* .editor {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.editor__wrapper {
+    width: 50%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    background: var(--editor-bg);
+    padding: 2em;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.editor__body {
+    flex: 1;
+}
+
+.editor__footer {
+    display: flex;
+}
+
+.editor__footer--left {
+    display: flex;
+    flex-direction: column;
+}
+
+.editor__footer--right {
+    flex: 1;
+    margin-left: 10px;
+    overflow: hidden;
+}
+
+.editor__btn {
+    border: 0;
+    padding: .5em;
+    margin-top: 1em;
+    width: 100px;
+    cursor: pointer;
+}
+
+.editor__console {
+    background-color: #fff;
+    width: 100%;
+    height: 130px;
+    margin-top: .9em;
+    border: 1px solid var(--editor-border);
+    overflow: auto;
+}
+
+.editor__code {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid var(--editor-border);
+} */

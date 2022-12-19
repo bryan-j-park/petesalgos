@@ -22,59 +22,88 @@
             <h1>Pete's Algos</h1>
         </nav>
         <div class="links">
-            <h2><a href="/dashboard">all algos</a></h2>
+            <h2><a href="/dashboard">problems</a></h2>
             <h2><a href="/logout">logout</a></h2>
         </div>
     </header>
     <main>
-        <p>Status:</p>
+        
+        <h2>${problem.number}. ${problem.name}</h2>
+        <!-- <p>Status:</p> -->
         <c:choose>
             <c:when test="${solvedProblemIds.contains(problem.id)}">
                 <form action="/delete/${userId}/${problem.id}" method="POST">
                     <input type="hidden" name="_method" value="delete"/>
-                    <input type="submit" value="Solved" class=""/>
+                    <button type="submit">Solved</button>
                 </form>
             </c:when>
             <c:otherwise>
                 <form action="/solved/${userId}/${problem.id}" method="POST">
-                    <input type="submit" value="Not Solved">
+                    <button type="submit">Not Solved</button>
                 </form>
             </c:otherwise>
         </c:choose>
-
-        <h2>${problem.number}. ${problem.name}</h2>
         <p><a href="${problem.leetcodeLink}">View On LeetCode</a></p>
-        <pre>${problem.question}</pre>
-        <br><br>
+        <div class="line"></div>
+        <pre><p>${problem.question}</p></pre>
 
+        <!---- SOLUTION: SHOW IF THE USER HAS POSTED SOLUTION---->
         <div class="solution">
-        <pre>
-            <code>
-                ${problem.code}
-            </code>
-        </pre>
+            <h3>Your Solution:</h3>
+            <div class="solution-code">
+                <pre>
+                    <code>
+                        ${problem.code}
+                    </code>
+                </pre>
+            </div>
+            
+            <p>${problem.description}</p>
         </div>
+        <div class="line"></div>
+        <!---- SOLUTION---->
 
-        <pre>${problem.description}</pre>
-
+        
         <form:form action="/add/comment" method="POST" modelAttribute="comment">
             <p class="">
                 <form:label path = "comment">Comment:</form:label>
                 <form:textarea path = "comment"/>
-                <form:errors path = "comment" class=""/>
+                <form:errors path = "comment" style="color:red"/>
             </p>
-
+            
             <p class="">
                 <form:label path = "user_solution">Solution (Optional):</form:label>
                 <form:textarea path = "user_solution"/>
-                <form:errors path = "user_solution" class=""/>
+                <form:errors path = "user_solution" style="color:red"/>
             </p>
-
+            
             <input type="hidden" path="user" value="${userId}"/>
             <input type="hidden" path="problem" value="${problem.id}"/>
-
-            <input type="submit" value="Add Comment"/>
+            
+            <button type="submit">Add Comment</button>
         </form:form>
-    </main>
+
+        <!-- <div class="editor">
+            <div class="editor__wrapper">
+                <div class="editor__body">
+                    <div id="editorCode" class="editor__code"></div>
+                </div>
+                <div class="editor__footer">
+                    <div class="editor__footer--left">
+                        <button class="editor__btn editor__run">Run ></button>
+                        <button class="editor__btn editor__reset">Reset ></button>
+                    </div>
+                    <div class="editor__footer--right">
+                        <div class="editor__console">
+                            <ul class="editor__console-logs"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="/js/ace-editor/src-min/ace.js"></script>
+    <script src="/js/ace-editor/src-min/mode-javascript.js"></script>
+    <script src="/js/editor.js"></script> -->
 </body>
 </html>
