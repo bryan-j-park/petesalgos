@@ -17,8 +17,11 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
 <body>
-    
     <section class="container forms">
+        <div id="header">
+            <img src="/imgs/pete2.png">
+            <h1>Pete's Algos</h1>
+        </div>
         <div class="form login">
             <div class="form-content">
                 <header>Login</header>
@@ -36,41 +39,7 @@
                         <button>Login</button>
                     </div>
                     <div class="form-link">
-                        <span>New here? <a href="#" class="signup-link">Sign Up</a></span>
-                    </div>
-                </form:form>
-            </div>
-        </div>
-
-        <!--register form-->
-
-        <div class="form signup">
-            <div class="form-content">
-                <header>Register</header>
-                <form:form action="/register" method="POST" modelAttribute="newUser">
-                    <div class="field input-field">
-                        <form:input type="text" path="userName" placeholder="Username" class="input"/>
-                        <form:errors path="userName" style="color:red"/>
-                    </div>
-                    <div class="field input-field">
-                        <form:input type="text" path="email" placeholder="Email" class="input"/>
-                        <form:errors path="email" style="color:red"/>
-                    </div>
-                    <div class="field input-field">
-                        <form:input type="password" path="password" placeholder="Password" class="password"/>
-                        <i class='bx bx-hide eye-icon'></i>
-                        <form:errors path="password" style="color:red"/>
-                    </div>
-                    <div class="field input-field">
-                        <form:input type="password" path="confirm" placeholder="Confirm Password" class="password"/>
-                        <i class='bx bx-hide eye-icon'></i>
-                        <form:errors path="confirm" style="color:red"/>
-                    </div>
-                    <div class="field button-field">
-                        <button>Register</button>
-                    </div>
-                    <div class="form-link">
-                        <span>Already have an account? <a href="#" class="signup-link">Log In</a></span>
+                        <span>New here? <a href="/" class="signup-link">Sign Up</a></span>
                     </div>
                 </form:form>
             </div>

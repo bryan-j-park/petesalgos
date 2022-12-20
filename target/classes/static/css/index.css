@@ -16,8 +16,11 @@ body {
 }
 
 main {
-    margin: 200px auto;
+    margin: 10% auto;
     width:70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #header {
@@ -31,11 +34,11 @@ h1 {
 }
 
 article {
-    width: 50%;
+    width: 100%;
     font-size: 1.5em;
 }
 
-button {
+/* button {
     font-size: 1.5em;
     margin-top: 20px;
     padding: 20px;
@@ -43,4 +46,103 @@ button {
     border: none;
     border-radius: 20px;
     box-shadow: 5px 5px 5px #0A2463;
+} */
+
+/* .container {
+    height:100vh;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 30px;;
+} */
+
+.form {
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    width: 80%;
+    padding:30px;
+}
+
+section {
+    width:40%;
+    margin:0 auto;
+}
+
+header {
+    font-size: 28px;
+    font-weight: 600;
+    color:#0A2463;
+    text-align: center;
+}
+
+/* form {
+    margin-top: 30px;
+} */
+.form .field {
+    position: relative;
+    height: 50px;
+    width:100%;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+.field button,
+.field input{
+    height:100%;
+    width:100%;
+    border: none;
+    font-size: 16px;
+    font-weight:400;
+    border-radius: 6px;
+}
+.field input{
+    padding: 0 15px;
+    border: 1px solid #bbb;
+    outline: none;
+}
+.field input:focus{
+    border-bottom-width:2px;
+}
+.eye-icon{
+    position: absolute;
+    font-size: 18px;
+    color:#8b8b8b;
+    top:50%;
+    right:10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 5px;
+}
+.field button {
+    background-color: #0A2463;
+    color:#FFFFFF;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.field button:hover {
+    background-color: #8EB1C7;
+}
+.form-link{
+    text-align: center;
+    margin-top:10px;
+}
+.form-link span,
+.form-link a{
+    font-size: 14px;
+    font-weight:400;
+}
+
+.form a{
+    text-decoration: none;
+    color:#0A2463;
+
+}
+.form a:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width:400px) {
+    .form {
+        padding: 15px 10px;
+    }
 }
