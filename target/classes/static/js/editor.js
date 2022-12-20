@@ -1,7 +1,6 @@
 let codeEditor = ace.edit("editorCode");
-let textarea = $('textarea[name = "userSolution"]');
-codeEditor.getSession().setValue(textarea.val());
+let textarea = document.getElementById("userSolution");
+codeEditor.getSession().setMode("ace/mode/javascript");
 codeEditor.getSession().on("change", function(){
-  textarea.val(codeEditor.getSession().getValue());
-  codeEditor.setValue(textarea)
+textarea.value = codeEditor.getSession().getValue();
 })
