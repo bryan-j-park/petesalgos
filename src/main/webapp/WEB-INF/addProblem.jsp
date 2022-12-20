@@ -33,9 +33,9 @@
 		<p>
 			<form:label path = "difficulty">Difficulty:</form:label>
 			<form:select path = "difficulty">
-				<form:option value="easy">Easy</form:option>
-				<form:option value="medium">Medium</form:option>
-				<form:option value="hard">Hard</form:option>
+				<form:option value="Easy">Easy</form:option>
+				<form:option value="Medium">Medium</form:option>
+				<form:option value="Hard">Hard</form:option>
 			</form:select>
 			<form:errors path = "difficulty"/>
 		</p>
@@ -43,16 +43,16 @@
 		<p>
 			<form:label path = "datatype">Datatype:</form:label>
 			<form:select path="datatype">
-				<form:option value="hash">Hash Function</form:option>
-				<form:option value="binary indexed tree">Binary Indexed Tree</form:option>
-				<form:option value="string matching">String Matching</form:option>
-				<form:option value="shortest path">Shortest Path</form:option>
-				<form:option value="merge sort">Merge Sort</form:option>
-				<form:option value="doubly linked list">Doubly-Linked List</form:option>
-				<form:option value="probability">Probability</form:option>
-				<form:option value="array">Array</form:option>
-				<form:option value="sort algorithms">Sort Algorithm</form:option>
-				<form:option value="other">Other</form:option>
+				<form:option value="Hash">Hash Function</form:option>
+				<form:option value="Binary Indexed Tree">Binary Indexed Tree</form:option>
+				<form:option value="String Matching">String Matching</form:option>
+				<form:option value="Shortest Path">Shortest Path</form:option>
+				<form:option value="Merge Sort">Merge Sort</form:option>
+				<form:option value="Doubly Linked List">Doubly-Linked List</form:option>
+				<form:option value="Probability">Probability</form:option>
+				<form:option value="Array">Array</form:option>
+				<form:option value="Sort Algorithms">Sort Algorithm</form:option>
+				<form:option value="Other">Other</form:option>
 			</form:select>
 			<form:errors path = "datatype"/>
 		</p>
