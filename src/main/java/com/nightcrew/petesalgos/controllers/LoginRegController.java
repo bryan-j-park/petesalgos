@@ -22,14 +22,14 @@ public class LoginRegController {
 
 // ============== Landing Page =============
   @GetMapping("/")
-  public String index() {
+  public String index(Model model) {
+    model.addAttribute("newUser", new User());
     return "index.jsp";
   }
 
 // =============== Login/Register Page ==============
   @GetMapping("/loginpage")
   public String logreg(Model model) {
-    model.addAttribute("newUser", new User());
     model.addAttribute("newLogin", new LoginUser());
     return "logreg.jsp";
   }
@@ -41,7 +41,7 @@ public class LoginRegController {
     User registeredUser = userService.register(newUser, result);
     if(result.hasErrors()) {
       model.addAttribute("newLogin", new LoginUser());
-      return "logreg.jsp";
+      return "index.jsp";
     }
     else {
       session.setAttribute("userId", registeredUser.getId());

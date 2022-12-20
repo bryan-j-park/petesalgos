@@ -15,13 +15,23 @@ body {
     /* background by SVGBackgrounds.com*/
 }
 
-.container {
-    height:100vh;
-    width:100%;
+#header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    column-gap: 30px;;
+}
+
+h1 {
+    font-family: 'Righteous';
+    font-size: 4.5em;
+}
+
+.container {
+    width:50%;
+    margin: 10% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
 .form {
@@ -31,18 +41,7 @@ body {
     width: 100%;
     padding:30px;
 }
-/* .form.signup {
-    opacity: 0;
-    pointer-events: none;
-}
-.forms.show-signup .form.signup{
-    opacity: 1;
-    pointer-events: auto;
-}
-.forms.show-signup .form.login{
-    opacity: 0;
-    pointer-events: none;
-} */
+
 header {
     font-size: 28px;
     font-weight: 600;
