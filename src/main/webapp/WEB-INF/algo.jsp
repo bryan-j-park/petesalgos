@@ -14,6 +14,7 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/imgs/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/imgs/favicon-16x16.png">
         <link rel="manifest" href="/imgs/site.webmanifest">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
 <body>
     <header>
@@ -34,12 +35,12 @@
             <c:when test="${solvedProblemIds.contains(problem.id)}">
                 <form action="/delete/${userId}/${problem.id}" method="POST">
                     <input type="hidden" name="_method" value="delete"/>
-                    <button type="submit">Solved</button>
+                    <button type="submit">Remove From Solved</button>
                 </form>
             </c:when>
             <c:otherwise>
                 <form action="/solved/${userId}/${problem.id}" method="POST">
-                    <button type="submit">Not Solved</button>
+                    <button type="submit">I Solved This</button>
                 </form>
             </c:otherwise>
         </c:choose>
@@ -47,9 +48,10 @@
         <div class="line"></div>
         <pre><p>${problem.question}</p></pre>
 
-        <!---- SOLUTION: SHOW IF THE USER HAS POSTED SOLUTION---->
-        <div class="solution">
-            <h3>Your Solution:</h3>
+        <!---- SOLUTION THAT WE PROVIDE---->
+        <button id="sol-btn" type="button" onclick="solShowHide()">Show Solution</button>
+        <div id="solution" style="display:none;">
+            <h3>Solution:</h3>
             <div class="solution-code">
                 <pre>
                     <code>
@@ -63,11 +65,14 @@
         <div class="line"></div>
         <!---- SOLUTION---->
 
-        
+        <!-- COMMENTS-->
+        <section class="comments">
+
+        <h2><i class='bx bx-comment'></i> Comments</h2>
         <form:form action="/add/comment/${problem.id}" method="POST" modelAttribute="newComment">
             <p class="">
-                <form:label path = "comment">Comment:</form:label>
-                <form:textarea path = "comment"></form:textarea>
+                <form:label path = "comment" >Comment:</form:label>
+                <form:textarea path = "comment" placeholder="Add a comment..."></form:textarea>
                 <form:errors path = "comment" style="color:red"/>
             </p>
             
@@ -93,13 +98,25 @@
             
             <button type="submit">Add Comment</button>
         </form:form>
+        <div class="line"></div>
 
-        <div>
+            <!--COMMENT SECTION-->
             <c:forEach var="comment" items="${allComments}">
-                <div>
-                    <p><c:out value="${comment.user.userName}"/></p>
+
+                <div class="comment-container">
+                    <!-- user's comment -->
+                    <h3 class="username"><c:out value="${comment.user.userName}"/></h3>
+                    <p>posted at: <c:out value="${comment.user.createdAt}"/></p>
+                    <div class="line"></div>
                     <p><c:out value="${comment.comment}"/></p>
-                    <pre><p><c:out value="${comment.userSolution}"/></p></pre>
+
+                    <!-- user's solution if it exists-->
+                    <c:if test="${comment.userSolution.length() > 0}">
+                        <p style="color:#8A6A7A; font-weight:600;"><c:out value="${comment.user.userName}"/>'s solution:</p>
+                        <pre><p class="comment-solution"><c:out value="${comment.userSolution}"/></p></pre>
+                    </c:if>
+
+                    <!-- delete button for logged in user-->
                     <c:if test="${comment.user.id.equals(userId)}">
                         <form action="/delete/comment/${comment.id}/${problem.id}" method="post">
                             <input type="hidden" name="_method" value="delete" />
@@ -108,10 +125,19 @@
                     </c:if>
                 </div>
             </c:forEach>
+        </section>
+    </main>
+
+    <footer>
+        <div class="links">
+            <p><a href="/about">About</a></p>
+            <p><a href="/credits">Credits</a></p>
         </div>
+    </footer>
 
     <script src="/js/ace-editor/src-min/ace.js"></script>
     <script src="/js/ace-editor/src-min/mode-javascript.js"></script>
     <script src="/js/editor.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>

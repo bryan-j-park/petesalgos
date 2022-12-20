@@ -17,9 +17,15 @@ pwShowHide.forEach(eyeIcon => {
     })
 });
 
-// links.forEach(link => {
-//     link.addEventListener('click', e => {
-//         e.preventDefault(); //preventing form submit
-//         forms.classList.toggle('show-signup');
-//     })
-// });
+const solution = document.getElementById('solution');
+const button = document.getElementById('sol-btn');
+
+function solShowHide() {
+    if(solution.style.display !== 'none') {
+        solution.style.display = 'none';
+        button.innerHTML = 'Show Solution';
+    } else {
+        solution.style.display = 'block';
+        button.innerHTML = 'Hide Solution';
+    }
+}

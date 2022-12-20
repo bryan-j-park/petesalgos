@@ -72,7 +72,7 @@
                             <c:when test="${problem.favorited.contains(user)}">
                                 <!-- favorited referring to the list in the problem model -->
                             <td>
-                                <form action="/favorites/${problem.id}/delete" method="post">
+                                <form action="/favorites/${problem.id}/delete" method="post" class="fave-btn">
                                     <input type="hidden" name="_method" value="put" />
                                     <button type="submit">Remove Favorite</button>
                                 </form>
@@ -82,7 +82,7 @@
 
                         <c:otherwise>
                             <td>
-                                    <form action="/favorites/${problem.id}/receive" method="post">
+                                    <form action="/favorites/${problem.id}/receive" method="post" class="fave-btn">
                                         <input type="hidden" name="_method" value="put" />
                                         <button type="submit">Add To Favorites</button>
                                     </form>

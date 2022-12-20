@@ -10,10 +10,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-html, body {
+/* html, body {
     height: 100%;
     width: 100%;
-}
+} */
 
 header h1 {
     font-family: 'Righteous';
@@ -23,7 +23,7 @@ header h1 {
 }
 
 header{
-    background-color: #E3E2DD;
+    background-color: #F0F0F0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,32 +36,32 @@ nav {
 }
 
 h2 {
-    color: #9D808E;
+    color: #8A6A7A;
 }
 
 .links {
     width:20%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
-/* pre {
+pre {
     white-space: pre-wrap;
-} */
+}
 
 code {
-    background-color: #E3E2DD;
+    background-color: #F0F0F0;
 }
 
-.solution {
-    width:inherit;
+#solution {
+    width:60%;
     overflow: auto;
     margin: 25px auto;
 }
 
 .solution-code {
-    background-color: #E3E2DD;
-    padding: 20px;
+    background-color: #F0F0F0;
+    padding: 10px 30px;
 }
 
 a {
@@ -70,7 +70,7 @@ a {
 }
 
 a:hover {
-    color:#9D808E;
+    color:#8A6A7A;
     text-decoration: underline;
 }
 
@@ -92,7 +92,7 @@ main {
 .profile {
     width:25%;
     padding: 25px;
-    background-color: #E3E2DD;
+    background-color: #F0F0F0;
 }
 
 li {
@@ -109,7 +109,7 @@ li {
 
 table {
     margin:20px 0;
-    width:100%;
+    width:72%;
 }
 
 table, th, td {
@@ -120,11 +120,15 @@ table, th, td {
 }
 
 tbody tr:nth-child(even) {
-    background-color: #E3E2DD;
+    background-color: #F0F0F0;
 }
 
 form {
     width:70%;
+    padding-top: 20px;
+}
+
+.fave-btn {
     padding: 20px 0;
 }
 
@@ -207,7 +211,7 @@ button:hover {
     bottom: 0;
     left: 0;
     right: 0;
-    border: 1px solid #E3E2DD;
+    border: 1px solid #F0F0F0;
 }
 
 /* .editor__footer {
@@ -244,4 +248,33 @@ button:hover {
 
 .sort button{
     margin: 15px 10px;
+}
+
+.comments {
+    margin-top: 25px;
+}
+
+.comment-container {
+    background-color: #F0F0F0;
+    margin: 10px 0;
+    padding:25px;
+    border-radius: 20px;
+    width: 80%;
+}
+
+.comment-solution {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.username {
+    color:#8A6A7A;
+}
+
+footer {
+    background-color: #F0F0F0;
+    padding: 25px 0;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
 }
