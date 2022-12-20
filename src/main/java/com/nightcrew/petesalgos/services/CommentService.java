@@ -25,4 +25,12 @@ public class CommentService {
   public void addComment(String comment, String user_solution, Long userId, Long problemId){
     commentRepo.addComment(comment,user_solution, userId, problemId);
   }
+
+  public List<Comment> getCommentDesc(Problem problem){
+    return commentRepo.allCommentDesc(problem);
+  }
+
+
+
+
 }

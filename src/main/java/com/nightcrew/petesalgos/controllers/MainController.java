@@ -67,7 +67,7 @@ public class MainController {
     model.addAttribute("solvedProblemIds", solvedProblemIds);
     
     // ================= Comment Section =====================
-    List<Comment> allComments = commentService.getCommentsByProblem(problem);
+    List<Comment> allComments = commentService.getCommentDesc(problem);
     model.addAttribute("allComments", allComments);
 
     return "algo.jsp";
@@ -111,8 +111,7 @@ public class MainController {
     if(result.hasErrors()){
       return "algo.jsp";
     }
-    // commentRepo.addComment(comment.getComment(), comment.getUser_solution(),  comment.getUser().getId(), comment.getProblem().getId());
-    commentService.createComment(comment);
+      commentService.createComment(comment);
     return "redirect:/algo/{problemId}";
   }
 
