@@ -27,7 +27,7 @@ public class Comment {
   private String comment;
 
   @Lob
-  private String user_solution;
+  private String userSolution;
 
 
   @Column(updatable = false)
@@ -43,6 +43,12 @@ public class Comment {
   private Problem problem;
 
 
+public Comment(){}
+
+public Comment(String comment, String userSolution){
+  this.comment = comment;
+  this.userSolution = userSolution;
+}
 
 
 
@@ -63,13 +69,6 @@ public class Comment {
     this.comment = comment;
   }
 
-  public String getUser_solution() {
-    return user_solution;
-  }
-
-  public void setUser_solution(String user_solution) {
-    this.user_solution = user_solution;
-  }
 
   public Date getCreatedAt() {
     return createdAt;
@@ -102,6 +101,18 @@ public class Comment {
   public void setProblem(Problem problem) {
     this.problem = problem;
   }
+
+
+  public void setUserSolution(String userSolution) {
+    this.userSolution = userSolution;
+  }
+
+  public String getUserSolution() {
+    return userSolution;
+  }
+
+
+
 
 
 

@@ -27,7 +27,7 @@
         </div>
     </header>
     <main>
-        
+       
         <h2>${problem.number}. ${problem.name}</h2>
         <!-- <p>Status:</p> -->
         <c:choose>
@@ -64,30 +64,32 @@
         <!---- SOLUTION---->
 
         
-        <form:form action="/add/comment" method="POST" modelAttribute="comment">
+        <form:form action="/add/comment" method="POST" modelAttribute="newComment">
             <p class="">
                 <form:label path = "comment">Comment:</form:label>
-                <form:textarea path = "comment"/>
+                <form:textarea path = "comment"></form:textarea>
                 <form:errors path = "comment" style="color:red"/>
             </p>
             
             <p class="">
-                <form:label path = "user_solution">Solution (Optional):</form:label>
-                <!-- <form:textarea path = "user_solution"/> -->
+                <form:label path = "userSolution">Solution (Optional):</form:label>
+                
                 <div class="container">
                     <div class="editor">
                         <div class="editor__wrapper">
                             <div class="editor__body">
-                                <div id="editorCode" class="editor__code"><form:input type="text" path = "user_solution"/></div>
+                                <div id="editorCode" class="editor__code">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <form:errors path = "user_solution" style="color:red"/>
+                <form:textarea style="display: none;" path="userSolution" name="userSolution"></form:textarea>
+                <form:errors path = "userSolution" style="color:red"/>
             </p>
-            
-            <input type="hidden" path="user" value="${userId}"/>
-            <input type="hidden" path="problem" value="${problem.id}"/>
+
+            <form:input type="hidden" path="user" value="${userId}"/>
+            <form:input type="hidden" path="problem" value="${problem.id}"/>
             
             <button type="submit">Add Comment</button>
         </form:form>
