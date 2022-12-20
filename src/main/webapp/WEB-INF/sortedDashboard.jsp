@@ -46,8 +46,8 @@
                         <th>Datatype</th>
                         <th>
                             <select onchange="sortByDifficulty(this)">
-                                <option value="">select</option>
-                                <option value="https://www.google.com">Google</option>
+                                <option value="">Select Difficulty</option>
+                                <option value="http://localhost:8080/dashboard">All Problems</option>
                                 <option value="http://localhost:8080/dashboard/Easy">Easy</option>
                                 <option value="http://localhost:8080/dashboard/Medium">Medium</option>
                                 <option value="http://localhost:8080/dashboard/Hard">Hard</option>
@@ -58,7 +58,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach var="problem" items="${problemList}">
+                    <c:forEach var="problem" items="${sortedProblems}">
                     <tr>
                         <c:choose>
                             <c:when test="${solvedProblemIds.contains(problem.id)}">

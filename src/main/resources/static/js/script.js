@@ -29,3 +29,11 @@ function solShowHide() {
         button.innerHTML = 'Hide Solution';
     }
 }
+
+// redirect by difficulty on dashboard
+
+function sortByDifficulty(difficultyLevel){
+    let difficulty = difficultyLevel.options[difficultyLevel.selectedIndex].value;
+    window.location.href = difficulty;
+    
+}
