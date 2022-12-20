@@ -21,4 +21,8 @@ public class CommentService {
   public Comment createComment(Comment comment){
     return commentRepo.save(comment);
   }
+
+  public void addComment(String comment, String user_solution, Long userId, Long problemId){
+    commentRepo.addComment(comment,user_solution, userId, problemId);
+  }
 }

@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.nightcrew.petesalgos.models.Comment;
 import com.nightcrew.petesalgos.models.Problem;
 import com.nightcrew.petesalgos.models.User;
+import com.nightcrew.petesalgos.repositories.CommentRepository;
 import com.nightcrew.petesalgos.repositories.ProblemRepository;
 import com.nightcrew.petesalgos.repositories.UserRepository;
 import com.nightcrew.petesalgos.services.CommentService;
@@ -43,7 +44,7 @@ public class MainController {
 
 // ============== Display Algo By Id ==================
   @GetMapping("/algo/{id}")
-  public String algo(@ModelAttribute("comment") Comment comment, 
+  public String algo(@ModelAttribute("newComment") Comment comment, 
       @PathVariable("id") Long id, Model model, HttpSession session) {
     Boolean notInSession = session.getAttribute("userId") == null;
     if(notInSession){
@@ -94,7 +95,7 @@ public class MainController {
 
 // =================== Add Comment ======================
   @PostMapping("/add/comment")
-  public String addComment(@Valid @ModelAttribute("comment") Comment comment, 
+  public String addComment(@Valid @ModelAttribute("newComment") Comment comment, 
       BindingResult result, Model model, HttpSession session){
     Boolean notInSession = session.getAttribute("userId") == null; 
     if(notInSession){
@@ -106,6 +107,11 @@ public class MainController {
     if(result.hasErrors()){
       return "algo.jsp";
     }
+
+
+
+
+    // commentRepo.addComment(comment.getComment(), comment.getUser_solution(),  comment.getUser().getId(), comment.getProblem().getId());
     commentService.createComment(comment);
     return "redirect:/dashboard";
   }
