@@ -64,7 +64,7 @@
         <!---- SOLUTION---->
 
         
-        <form:form action="/add/comment" method="POST" modelAttribute="newComment">
+        <form:form action="/add/comment/${problem.id}" method="POST" modelAttribute="newComment">
             <p class="">
                 <form:label path = "comment">Comment:</form:label>
                 <form:textarea path = "comment"></form:textarea>
@@ -94,7 +94,20 @@
             <button type="submit">Add Comment</button>
         </form:form>
 
-    
+        <div>
+            <c:forEach var="comment" items="${allComments}">
+                <div>
+                    <p><c:out value="${comment.user.userName}"/></p>
+                    <p><c:out value="${comment.comment}"/></p>
+                    <c:if test="${comment.user.id.equals(userId)}">
+                        <form action="/delete/comment/${comment.id}/${problem.id}" method="post">
+                            <input type="hidden" name="_method" value="delete" />
+                            <button type="submit">Delete</button>
+                        </form>
+                    </c:if>
+                </div>
+            </c:forEach>
+        </div>
 
     <script src="/js/ace-editor/src-min/ace.js"></script>
     <script src="/js/ace-editor/src-min/mode-javascript.js"></script>
