@@ -86,7 +86,7 @@ public class MainController {
       return "algo.jsp";
     }
     userRepo.addSolvedProblem(userId, problemId);
-    return "redirect:/dashboard";
+    return "redirect:/algo/{problemId}";
   }
 
 // ============= Delete Solved Algo By userId and problemId ===================
@@ -94,7 +94,7 @@ public class MainController {
   public String deleteSolvedProblem(@PathVariable("userId") Long userId, 
       @PathVariable("problemId") Long problemId){
     userRepo.deleteSolvedProblem(userId, problemId);
-    return "redirect:/dashboard";
+    return "redirect:/algo/{problemId}";
   }
 
 // =================== Add Comment ======================
