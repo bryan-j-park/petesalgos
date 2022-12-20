@@ -55,7 +55,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 		
 		@DateTimeFormat(pattern="yyyy-MM-dd")
 		private Date updatedAt;
-		
+	
 		@PrePersist
 		protected void onCreated() {
 			this.createdAt = new Date();
