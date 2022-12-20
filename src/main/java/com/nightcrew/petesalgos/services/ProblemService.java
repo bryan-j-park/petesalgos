@@ -28,6 +28,11 @@ public class ProblemService {
     return problemRepo.sortDatatype(datatype);
   }
 
+  // List all sorted by difficulty
+  public List<Problem> sortDifficulty(String difficulty){
+    return problemRepo.sortDifficulty(difficulty);
+  }
+
   //Create problem
   
   public Problem createProblem(Problem problem) {

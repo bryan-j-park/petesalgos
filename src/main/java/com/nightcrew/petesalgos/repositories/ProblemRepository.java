@@ -25,4 +25,11 @@ public interface ProblemRepository extends CrudRepository<Problem, Long> {
   nativeQuery = true)
   List<Problem> sortDatatype(
     @Param("datatype") String datatype);
+
+  @Transactional
+  @Modifying
+  @Query(value = "SELECT * FROM problems WHERE difficulty = :difficulty",
+  nativeQuery = true)
+  List<Problem> sortDifficulty(
+    @Param("difficulty") String difficulty);
 }
