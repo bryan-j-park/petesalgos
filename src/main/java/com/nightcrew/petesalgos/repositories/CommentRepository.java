@@ -35,5 +35,13 @@ public interface CommentRepository extends CrudRepository<Comment, Long>{
   void deleteComment(
     @Param("commentId") Long commentId);
 
+// order comments by DESC
+@Transactional
+@Modifying
+@Query(value="SELECT * FROM comments WHERE problem_id = :problemId ORDER BY id DESC;", 
+nativeQuery = true)
+List<Comment> allCommentDesc(
+  @Param("problemId") Problem problem);
+
 
 }
