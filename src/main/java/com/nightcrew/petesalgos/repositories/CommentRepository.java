@@ -28,5 +28,12 @@ public interface CommentRepository extends CrudRepository<Comment, Long>{
     @Param("problemId") Long problemId
   );
 
+  @Transactional
+  @Modifying
+  @Query(value="DELETE FROM comments WHERE id = :commentId", 
+  nativeQuery = true)
+  void deleteComment(
+    @Param("commentId") Long commentId);
+
 
 }

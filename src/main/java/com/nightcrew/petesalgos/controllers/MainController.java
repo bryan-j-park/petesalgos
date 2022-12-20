@@ -42,6 +42,9 @@ public class MainController {
   @Autowired
   private CommentService commentService;
 
+  @Autowired
+  private CommentRepository commentRepo;
+
 // ============== Display Algo By Id ==================
   @GetMapping("/algo/{id}")
   public String algo(@ModelAttribute("newComment") Comment comment, 
@@ -64,7 +67,8 @@ public class MainController {
     model.addAttribute("solvedProblemIds", solvedProblemIds);
     
     // ================= Comment Section =====================
-    
+    List<Comment> allComments = commentService.getCommentsByProblem(problem);
+    model.addAttribute("allComments", allComments);
 
     return "algo.jsp";
     }
@@ -94,9 +98,9 @@ public class MainController {
   }
 
 // =================== Add Comment ======================
-  @PostMapping("/add/comment")
+  @PostMapping("/add/comment/{problemId}")
   public String addComment(@Valid @ModelAttribute("newComment") Comment comment, 
-      BindingResult result, Model model, HttpSession session){
+      BindingResult result, @PathVariable("problemId")Long problemId, Model model, HttpSession session){
     Boolean notInSession = session.getAttribute("userId") == null; 
     if(notInSession){
       return "redirect:/";
@@ -107,13 +111,17 @@ public class MainController {
     if(result.hasErrors()){
       return "algo.jsp";
     }
-
-
-
-
     // commentRepo.addComment(comment.getComment(), comment.getUser_solution(),  comment.getUser().getId(), comment.getProblem().getId());
     commentService.createComment(comment);
-    return "redirect:/dashboard";
+    return "redirect:/algo/{problemId}";
+  }
+
+// ===================== Delete Comment ====================
+  @DeleteMapping("/delete/comment/{commentId}/{problemId}")
+  public String deleteComment(@PathVariable("commentId")Long commentId,
+      @PathVariable("problemId")Long problemId){
+    commentRepo.deleteComment(commentId);
+    return "redirect:/algo/{problemId}";
   }
 
 }
