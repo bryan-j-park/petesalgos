@@ -84,7 +84,7 @@
                         </div>
                     </div>
                 </div>
-                <form:textarea style="display: none;" path="userSolution" name="userSolution"></form:textarea>
+                <form:textarea style="display: none;" path="userSolution" id="userSolution"></form:textarea>
                 <form:errors path = "userSolution" style="color:red"/>
             </p>
 
@@ -99,6 +99,7 @@
                 <div>
                     <p><c:out value="${comment.user.userName}"/></p>
                     <p><c:out value="${comment.comment}"/></p>
+                    <pre><p><c:out value="${comment.userSolution}"/></p></pre>
                     <c:if test="${comment.user.id.equals(userId)}">
                         <form action="/delete/comment/${comment.id}/${problem.id}" method="post">
                             <input type="hidden" name="_method" value="delete" />
