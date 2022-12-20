@@ -14,6 +14,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/imgs/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/imgs/favicon-16x16.png">
     <link rel="manifest" href="/imgs/site.webmanifest">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <header>
@@ -27,16 +28,19 @@
         </div>
     </header>
     <main>
-        <button><a href="/sort/array">Array</a></button>
-        <button><a href="/sort/binary tree">Binary Tree</a></button>
-        <button><a href="/sort/binary search tree">Binary Search Tree</a></button>
+        <section class="sort">
+            <a href="/sort/array"><button>Array</button></a>
+            <a href="/sort/binary tree"><button>Binary Tree</button></a>
+            <a href="/sort/binary search tree"><button>Binary Search Tree</button></a>
+        </section>
+
         <h1>All Algos</h1>
         <section class="main">
 
             <table>
                 <thead>
                     <tr>
-                        <th>Solved</th>
+                        <th>Status</th>
                         <th>Number</th>
                         <th>Problem</th>
                         <th>Datatype</th>
@@ -45,14 +49,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach var="problem"  items="${problemList}">
+                    <c:forEach var="problem" items="${problemList}">
                     <tr>
                         <c:choose>
                             <c:when test="${solvedProblemIds.contains(problem.id)}">
-                                <td>Solved</td>
+                                <td><i class='bx bx-check-square'></i></td>
                             </c:when>
                             <c:otherwise>
-                                <td>-s-</td>
+                                <td></td>
                             </c:otherwise>
                         </c:choose>
 
@@ -92,9 +96,10 @@
             </table>
             
             <div class="profile">
-                <h2>Your Favorites: ${user.userName}</h2>
+                <h2>${user.userName}</h2>
                 <div class="line"></div>
-                <c:forEach var="favorites"  items="${favList}">
+                <h3>Your Favorites:</h3>
+                <c:forEach var="favorites" items="${favList}">
                 <ul>
                     <li>
                         <a href="/algo/${favorites.id}"><c:out value="${favorites.name}"/></a>
@@ -130,8 +135,6 @@
                 </tbody>
             </table> -->
         </section>
-        
-
 
     </main>
 </body>

@@ -241,3 +241,7 @@ button:hover {
     border: 1px solid #E3E2DD;
     overflow: auto;
 } */
+
+.sort button{
+    margin: 15px 10px;
+}
