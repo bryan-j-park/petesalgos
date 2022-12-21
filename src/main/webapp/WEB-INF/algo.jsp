@@ -59,8 +59,9 @@
                     </code>
                 </pre>
             </div>
-            
-            <p>${problem.description}</p>
+            <pre>
+                <p>${problem.description}</p>
+            </pre>
         </div>
         <div class="line"></div>
         <!---- SOLUTION---->

@@ -18,7 +18,7 @@
             <h1>Pete's Algos</h1>
         </nav>
         <div class="links">
-            <h2><a href="">all algos</a></h2>
+            <h2><a href="/dashboard">all algos</a></h2>
             <h2><a href="/logout">logout</a></h2>
         </div>
     </header>

@@ -14,28 +14,33 @@ import com.nightcrew.petesalgos.models.Problem;
 @Repository
 public interface ProblemRepository extends CrudRepository<Problem, Long> {
 
-  List<Problem> findAll();
+  // List<Problem> findAll();
 
   List<Problem> findProblemById(Long userId);
- 
 
   @Transactional
   @Modifying
-  @Query(value = "SELECT * FROM problems WHERE datatype = :datatype",
+  @Query(value = "SELECT * FROM problems ORDER BY number ASC",
+  nativeQuery = true)
+  List<Problem> findAll();
+
+  @Transactional
+  @Modifying
+  @Query(value = "SELECT * FROM problems WHERE datatype = :datatype ORDER BY number ASC",
   nativeQuery = true)
   List<Problem> sortDatatype(
     @Param("datatype") String datatype);
 
   @Transactional
   @Modifying
-  @Query(value = "SELECT * FROM problems WHERE difficulty = :difficulty",
+  @Query(value = "SELECT * FROM problems WHERE difficulty = :difficulty ORDER BY number ASC",
   nativeQuery = true)
   List<Problem> sortDifficulty(
     @Param("difficulty") String difficulty);
 
   @Transactional
   @Modifying
-  @Query(value = "SELECT * FROM problems WHERE datatype = :datatype AND difficulty = :difficulty",
+  @Query(value = "SELECT * FROM problems WHERE datatype = :datatype AND difficulty = :difficulty ORDER BY number ASC",
   nativeQuery = true)
   List<Problem> sortDatatypeDifficulty(
     @Param("datatype") String datatype,
