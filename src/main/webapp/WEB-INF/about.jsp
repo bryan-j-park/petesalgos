@@ -37,7 +37,10 @@
 
         <h2>Pete</h2>
         <p>The inspiration behind our beloved mascot, Pete, is a stuffed opossum that belongs to one of our developers. A fleeting thought to include a mascot in the website turned into our main project idea.</p>
-        <img src="" alt="image of Pete the Opossum">
+        <div class="pete-imgs">
+            <img src="/imgs/pete-coding.jpg" alt="image of Pete the Opossum">
+            <img src="/imgs/pete-photo.jpg" alt="image of Pete the Opossum">
+        </div>
         
     </main>
     

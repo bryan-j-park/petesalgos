@@ -44,14 +44,14 @@
                 </form>
             </c:otherwise>
         </c:choose>
-        <p><a href="${problem.leetcodeLink}">View On LeetCode</a></p>
+        <p><a href="${problem.leetcodeLink}" target="_blank" rel="noopener noreferrer">View On LeetCode</a></p>
         <div class="line"></div>
         <pre><p>${problem.question}</p></pre>
 
         <!---- SOLUTION THAT WE PROVIDE---->
         <button id="sol-btn" type="button" onclick="solShowHide()">Show Solution</button>
         <div id="solution" style="display:none;">
-            <h3>Solution:</h3>
+            <h3>Pete's Solution:</h3>
             <div class="solution-code">
                 <pre>
                     <code>
@@ -59,6 +59,7 @@
                     </code>
                 </pre>
             </div>
+            <h3>Explanation:</h3>
             <pre>
                 <p>${problem.description}</p>
             </pre>
