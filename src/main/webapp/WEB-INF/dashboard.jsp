@@ -115,36 +115,18 @@
                 </ul>
                 </c:forEach>
             </div>
-
-            <!-- <table class="favorites">
-                <thead>
-                    <tr>
-                        <th>Number</th>
-                        <th>Problem</th>
-                        <th>Datatype</th>
-                        <th>Difficulty</th>
-                        <th>Add to Favorites</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <c:forEach var="favorites"  items="${favList}">
-                    <tr>
-
-                            <td> <c:out value="${favorites.number}"/></td>
-
-                            <td><a href="/display/problem/${problem.id}"><c:out value="${favorites.name}"/></a></td>
-
-                            <td><c:out value="${favorites.datatype}"/></td>
-
-                            <td><c:out value="${favorites.difficulty}"/></td>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-            </table> -->
         </section>
 
     </main>
+
+    <footer>
+        <div class="links">
+            <p><a href="/about">About</a></p>
+            <p><a href="/credits">Credits</a></p>
+            <p>Night Crew 2022</p>
+        </div>
+    </footer>
+    
     <script src="/js/script.js"></script>
 </body>
 </html>
