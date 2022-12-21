@@ -28,15 +28,24 @@
         </div>
     </header>
     <main>
-       
+
         <h1>About</h1>
+        <p>Pete's Algos is a website created by developers with a passion for solving algorithms. Our mission is to provide an easy-to-use platform where other developers can browse, practice, and save their favorite JavaScript algorithms. No matter where you are in your coding journey, Pete's Algos is here to help.</p>
+        
+        <h2>Our Story</h2>
+        <p>During our time in a coding bootcamp, we were tasked with solving a JavaScript algorithm every morning for 14 weeks. This led to a lot of algorithm practice and collaboration outside of class. When it came time for us to work on a group project, we thought it would be a good idea to create a website to showcase the work we've been doing. Pete's Algos was born out of a desire to organize our favorite algorithms all in one place.</p>
+
+        <h2>Pete</h2>
+        <p>The inspiration behind our beloved mascot, Pete, is a stuffed opossum that belongs to one of our developers. A fleeting thought to include a mascot in the website turned into our main project idea.</p>
+        <img src="" alt="image of Pete the Opossum">
         
     </main>
-
+    
     <footer>
         <div class="links">
             <p><a href="/about">About</a></p>
             <p><a href="/credits">Credits</a></p>
+            <p>Night Crew 2022</p>
         </div>
     </footer>
 

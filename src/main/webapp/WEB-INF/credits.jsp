@@ -30,13 +30,26 @@
     <main>
 
         <h1>Credits</h1>
-        
+        <h2>Team:</h2>
+        <h3>Felix Vargas Jr — <span>Back-end developer</span></h3>
+        <p><a href="https://github.com/NeverGiveUp23">Github</a></p>
+
+        <h3>Bryan Park — <span>Back-end developer</span></h3>
+        <p><a href="https://github.com/bryan-j-park">Github</a></p>
+
+        <h3>Jacob Reynolds — <span>Back-end developer</span></h3>
+        <p><a href="https://github.com/jakjak2012">Github</a></p>
+
+        <h3>Gabriela Flores — <span>Front-end developer</span></h3>
+        <p><a href="https://github.com/floresgabriela">Github</a></p>
+
     </main>
 
     <footer>
         <div class="links">
             <p><a href="/about">About</a></p>
             <p><a href="/credits">Credits</a></p>
+            <p>Night Crew 2022</p>
         </div>
     </footer>
 

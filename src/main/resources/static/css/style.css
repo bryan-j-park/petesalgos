@@ -8,6 +8,9 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    display:flex; 
+    flex-direction:column; 
+    min-height:100vh;
 }
 
 /* html, body {
@@ -82,6 +85,7 @@ p {
 main {
     width:80%;
     margin:25px auto;
+    flex-grow: 1;
 }
 
 .main {
@@ -277,4 +281,6 @@ footer {
     margin-top: 5%;
     display: flex;
     justify-content: center;
+    font-size: small;
+    width:100%;
 }

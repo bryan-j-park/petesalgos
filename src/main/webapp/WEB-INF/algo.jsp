@@ -132,8 +132,10 @@
         <div class="links">
             <p><a href="/about">About</a></p>
             <p><a href="/credits">Credits</a></p>
+            <p>Night Crew 2022</p>
         </div>
     </footer>
+
 
     <script src="/js/ace-editor/src-min/ace.js"></script>
     <script src="/js/ace-editor/src-min/mode-javascript.js"></script>
