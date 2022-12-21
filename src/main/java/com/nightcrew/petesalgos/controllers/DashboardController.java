@@ -39,6 +39,9 @@ public class DashboardController {
       Long userId = (Long) session.getAttribute("userId");
       User loggedInUser = userService.getOneUser(userId);
       model.addAttribute("user", loggedInUser);
+      
+      List<String> datatypes = problemService.datatypes();
+      model.addAttribute("datatypes", datatypes);
       // gets a list of all the problems from problemService and creates an empty list of favorite Problem.
     List<Problem> allProblems = problemService.allProblems();
     List<Problem> favoriteProblem = new ArrayList<>();
@@ -114,6 +117,9 @@ public class DashboardController {
       Long userId = (Long) session.getAttribute("userId");
       User loggedInUser = userService.getOneUser(userId);
       model.addAttribute("user", loggedInUser);
+
+      List<String> datatypes = problemService.datatypes();
+      model.addAttribute("datatypes", datatypes);
       // gets a list of all the problems from problemService and creates an empty list of favorite Problem.
     List<Problem> sortedProblems = problemService.sortDifficulty(difficulty);
     List<Problem> allProblems = problemService.allProblems();
@@ -127,7 +133,7 @@ public class DashboardController {
       }
     }
 
-
+    model.addAttribute("difficulty", difficulty);
     model.addAttribute("problemList", allProblems);
     model.addAttribute("favList", favoriteProblem);
     model.addAttribute("sortedProblems", sortedProblems);

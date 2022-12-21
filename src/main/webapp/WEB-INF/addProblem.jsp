@@ -43,16 +43,18 @@
 		<p>
 			<form:label path = "datatype">Datatype:</form:label>
 			<form:select path="datatype">
-				<form:option value="Hash">Hash Function</form:option>
-				<form:option value="Binary Indexed Tree">Binary Indexed Tree</form:option>
-				<form:option value="String Matching">String Matching</form:option>
-				<form:option value="Shortest Path">Shortest Path</form:option>
-				<form:option value="Merge Sort">Merge Sort</form:option>
-				<form:option value="Doubly Linked List">Doubly-Linked List</form:option>
-				<form:option value="Probability">Probability</form:option>
 				<form:option value="Array">Array</form:option>
-				<form:option value="Sort Algorithms">Sort Algorithm</form:option>
-				<form:option value="Other">Other</form:option>
+				<form:option value="Binary Search">Binary Search</form:option>
+				<form:option value="Binary Tree">Binary Tree</form:option>
+				<form:option value="Breadth-First Search">Breadth-First Search</form:option>
+				<form:option value="Depth-First Search">Depth-First Search</form:option>
+				<form:option value="Doubly Linked List">Doubly-Linked List</form:option>
+				<form:option value="Hash Table">Hash Table</form:option>
+				<form:option value="Linked List">Linked List</form:option>
+				<form:option value="Sorting">Sorting</form:option>
+				<form:option value="Stack">Stack</form:option>
+				<form:option value="String">String</form:option>
+				<form:option value="Queue">Queue</form:option>
 			</form:select>
 			<form:errors path = "datatype"/>
 		</p>
