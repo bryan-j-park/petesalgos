@@ -1,5 +1,6 @@
 package com.nightcrew.petesalgos.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -85,7 +86,22 @@ public void deleteFav(User user, Problem problem){
   problemRepo.save(problem);
 }
 
-
+public List<String> datatypes(){
+  List<String> datatypes = new ArrayList<String>();
+  datatypes.add("Array");
+  datatypes.add("Binary Search");
+  datatypes.add("Binary Tree");
+  datatypes.add("Breadth-First Search");
+  datatypes.add("Depth-First Search");
+  datatypes.add("Doubly Linked List");
+  datatypes.add("Hash Table");
+  datatypes.add("Linked List");
+  datatypes.add("Sorting");
+  datatypes.add("Stack");
+  datatypes.add("String");
+  datatypes.add("Queue");
+  return datatypes;
+}
 
 
 

@@ -29,9 +29,9 @@
     </header>
     <main>
         <section class="sort">
-            <a href="/sort/array"><button>Array</button></a>
-            <a href="/sort/binary tree"><button>Binary Tree</button></a>
-            <a href="/sort/binary search tree"><button>Binary Search Tree</button></a>
+            <c:forEach var="datatype" items="${datatypes}">
+                <a href="/sort/${datatype}"><button>${datatype}</button></a>
+            </c:forEach>
         </section>
 
         <h1>All Algos</h1>
@@ -46,8 +46,7 @@
                         <th>Datatype</th>
                         <th>
                             <select onchange="sortByDifficulty(this)">
-                                <option value="">select</option>
-                                <option value="https://www.google.com">Google</option>
+                                <option hidden value="">Select Difficulty</option>
                                 <option value="http://localhost:8080/dashboard/Easy">Easy</option>
                                 <option value="http://localhost:8080/dashboard/Medium">Medium</option>
                                 <option value="http://localhost:8080/dashboard/Hard">Hard</option>

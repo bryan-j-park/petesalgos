@@ -29,12 +29,12 @@
     </header>
     <main>
         <section class="sort">
-            <a href="/sort/array"><button>Array</button></a>
-            <a href="/sort/binary tree"><button>Binary Tree</button></a>
-            <a href="/sort/binary search tree"><button>Binary Search Tree</button></a>
+            <c:forEach var="datatype" items="${datatypes}">
+                <a href="/sort/${datatype}"><button>${datatype}</button></a>
+            </c:forEach>
         </section>
 
-        <h1>All Algos</h1>
+        <h1>${difficulty} Problems</h1>
         <section class="main">
 
             <table>
@@ -46,7 +46,7 @@
                         <th>Datatype</th>
                         <th>
                             <select onchange="sortByDifficulty(this)">
-                                <option value="">Select Difficulty</option>
+                                <option hidden value="">Select Difficulty</option>
                                 <option value="http://localhost:8080/dashboard">All Problems</option>
                                 <option value="http://localhost:8080/dashboard/Easy">Easy</option>
                                 <option value="http://localhost:8080/dashboard/Medium">Medium</option>
