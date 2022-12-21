@@ -65,6 +65,7 @@ code {
 .solution-code {
     background-color: #F0F0F0;
     padding: 10px 30px;
+    margin:20px 0;
 }
 
 a {
@@ -292,4 +293,14 @@ footer {
     justify-content: center;
     font-size: small;
     width:100%;
+}
+
+.pete-imgs {
+    display: flex;
+}
+
+.pete-imgs img {
+    max-height: 300px;
+    width: auto;
+    margin: 0 20px;
 }
