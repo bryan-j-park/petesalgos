@@ -250,6 +250,15 @@ button:hover {
     overflow: auto;
 } */
 
+.difficulty {
+    border: none;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: medium;
+    width:fit-content;
+}
+
 .sort button{
     margin: 15px 10px;
 }

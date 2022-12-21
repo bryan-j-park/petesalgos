@@ -46,7 +46,7 @@
                         <th>Problem</th>
                         <th>Datatype</th>
                         <th>
-                            <select onchange="sortByDifficulty(this)">
+                            <select onchange="sortByDifficulty(this)" class="difficulty">
                                 <option hidden value="">Select Difficulty</option>
                                 <option value="http://localhost:8080/dashboard">All Problems</option>
                                 <option value="http://localhost:8080/dashboard/Easy">Easy</option>
