@@ -29,6 +29,7 @@
     </header>
     <main>
         <section class="sort">
+            <h2>Datatypes:</h2>
             <c:forEach var="datatype" items="${datatypes}">
                 <a href="/sort/${datatype}"><button>${datatype}</button></a>
             </c:forEach>

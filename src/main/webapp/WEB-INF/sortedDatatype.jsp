@@ -28,14 +28,14 @@
         </div>
     </header>
     <main>
-        <h2>Datatypes:</h2>
         <section class="sort">
+            <h2>Datatypes:</h2>
             <c:forEach var="datatype" items="${datatypes}">
                 <a href="/sort/${datatype}"><button>${datatype}</button></a>
             </c:forEach>
         </section>
 
-        <h1>${difficulty} Problems</h1>
+        <h1>${difficulty} ${datatypeName} Problems</h1>
         <section class="main">
 
             <table>
@@ -48,10 +48,9 @@
                         <th>
                             <select onchange="sortByDifficulty(this)">
                                 <option hidden value="">Select Difficulty</option>
-                                <option value="http://localhost:8080/dashboard">All Problems</option>
-                                <option value="http://localhost:8080/dashboard/Easy">Easy</option>
-                                <option value="http://localhost:8080/dashboard/Medium">Medium</option>
-                                <option value="http://localhost:8080/dashboard/Hard">Hard</option>
+                                <option value="http://localhost:8080/sort/${datatype}/Easy">Easy</option>
+                                <option value="http://localhost:8080/sort/${datatype}/Medium">Medium</option>
+                                <option value="http://localhost:8080/sort/${datatype}/Hard">Hard</option>
                             </select>
                             
                         </th>
@@ -82,7 +81,7 @@
                             <c:when test="${problem.favorited.contains(user)}">
                                 <!-- favorited referring to the list in the problem model -->
                             <td>
-                                <form action="/${difficulty}/favorites/${problem.id}/delete" method="post" class="fave-btn">
+                                <form action="/delete/favorites/${problem.id}/${datatypeName}/${difficulty}" method="post" class="fave-btn">
                                     <input type="hidden" name="_method" value="put" />
                                     <button type="submit">Remove Favorite</button>
                                 </form>
@@ -92,7 +91,7 @@
 
                         <c:otherwise>
                             <td>
-                                    <form action="/${difficulty}/favorites/${problem.id}/receive" method="post" class="fave-btn">
+                                    <form action="/add/favorites/${problem.id}/${datatypeName}/${difficulty}" method="post" class="fave-btn">
                                         <input type="hidden" name="_method" value="put" />
                                         <button type="submit">Add To Favorites</button>
                                     </form>
@@ -117,33 +116,6 @@
                 </ul>
                 </c:forEach>
             </div>
-
-            <!-- <table class="favorites">
-                <thead>
-                    <tr>
-                        <th>Number</th>
-                        <th>Problem</th>
-                        <th>Datatype</th>
-                        <th>Difficulty</th>
-                        <th>Add to Favorites</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <c:forEach var="favorites"  items="${favList}">
-                    <tr>
-
-                            <td> <c:out value="${favorites.number}"/></td>
-
-                            <td><a href="/display/problem/${problem.id}"><c:out value="${favorites.name}"/></a></td>
-
-                            <td><c:out value="${favorites.datatype}"/></td>
-
-                            <td><c:out value="${favorites.difficulty}"/></td>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-            </table> -->
         </section>
 
     </main>
@@ -155,7 +127,7 @@
             <p>Night Crew 2022</p>
         </div>
     </footer>
-
+    
     <script src="/js/script.js"></script>
 </body>
 </html>

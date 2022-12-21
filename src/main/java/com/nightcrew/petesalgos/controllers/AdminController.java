@@ -90,4 +90,16 @@ public class AdminController {
 		problemService.deleteProblem(id);
 		return "redirect:/dashboard";
   }
+
+// ================== About Page =======================
+  @GetMapping("/about")
+  public String about(){
+    return "about.jsp";
+  }
+
+// =================== Credit Page =======================
+  @GetMapping("/credits")
+  public String credits(){
+    return "credits.jsp";
+  }
 }
