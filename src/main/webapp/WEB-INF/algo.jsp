@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page isErrorPage="true" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,7 +24,7 @@
             <h1>Pete's Algos</h1>
         </nav>
         <div class="links">
-            <h2><a href="/dashboard">problems</a></h2>
+            <h2><a href="/dashboard">dashboard</a></h2>
             <h2><a href="/logout">logout</a></h2>
         </div>
     </header>
@@ -108,7 +109,7 @@
                 <div class="comment-container">
                     <!-- user's comment -->
                     <h3 class="username"><c:out value="${comment.user.userName}"/></h3>
-                    <p>posted at: <c:out value="${comment.user.createdAt}"/></p>
+                    <p>posted on: <fmt:formatDate value="${comment.createdAt}" pattern="MMMM dd yyyy"/></p>
                     <div class="line"></div>
                     <p><c:out value="${comment.comment}"/></p>
 
