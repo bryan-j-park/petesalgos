@@ -1,18 +1,25 @@
 package com.nightcrew.petesalgos.services;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nightcrew.petesalgos.models.Problem;
 import com.nightcrew.petesalgos.models.User;
 import com.nightcrew.petesalgos.repositories.ProblemRepository;
+import com.nightcrew.petesalgos.repositories.UserRepository;
 
 @Service
 public class ProblemService {
   private final ProblemRepository problemRepo;
+
+  @Autowired
+  private UserRepository userRepo;
 
   public ProblemService(ProblemRepository problemRepo){
     this.problemRepo = problemRepo;
@@ -23,6 +30,23 @@ public class ProblemService {
     return problemRepo.findAll();
   }
 
+  // ============ Get List of Datatypes ============
+public List<String> datatypes(){
+  List<String> datatypes = new ArrayList<String>();
+  datatypes.add("Array");
+  datatypes.add("Binary Search");
+  datatypes.add("Binary Tree");
+  datatypes.add("Breadth-First Search");
+  datatypes.add("Depth-First Search");
+  datatypes.add("Doubly Linked List");
+  datatypes.add("Hash Table");
+  datatypes.add("Linked List");
+  datatypes.add("Sorting");
+  datatypes.add("Stack");
+  datatypes.add("String");
+  datatypes.add("Queue");
+  return datatypes;
+}
 
   // List all sorted by datatype
   public List<Problem> sortDataType(String datatype){
@@ -67,47 +91,54 @@ public Problem editProblem(Problem problem) {
 }
 
 //Delete Name
-
 public void deleteProblem(Long id) {
 	problemRepo.deleteById(id);
 }
 
-
-// Fav btn code
-public void favoriteProblem(User user, Problem problem){
-
-//  if(problem.getFavorited() == null){
-//   ArrayList<Problem> problem.getFavorited() = new ArrayList<Problem>();
-
-//  }
-  problem.getFavorited().add(user);
-  problemRepo.save(problem);
+// ============ Add Favorite Problem By userId and problemId ============
+public void favoriteProblem(Long userId, Long problemId){
+  Optional<User> optionalUser = userRepo.findById(userId);
+  Optional<Problem> optionalProblem = problemRepo.findById(problemId);
+  if(optionalUser.isPresent() && optionalProblem.isPresent()){
+    User user = optionalUser.get();
+    Problem problem = optionalProblem.get();
+    problem.getFavorited().add(user);
+    problemRepo.save(problem);
+  }
 }
 
-// delete Favorite Problem
-
-public void deleteFav(User user, Problem problem){
-  problem.getFavorited().remove(user);
-  problemRepo.save(problem);
+// ============ Delete Favorite Problem By userId and problemId ============
+public void deleteFav(Long userId, Long problemId){
+  Optional<User> optionalUser = userRepo.findById(userId);
+  Optional<Problem> optionalProblem = problemRepo.findById(problemId);
+  if(optionalUser.isPresent() && optionalProblem.isPresent()){
+    User user = optionalUser.get();
+    Problem problem = optionalProblem.get();
+    problem.getFavorited().remove(user);
+    problemRepo.save(problem);
+  }
 }
 
-public List<String> datatypes(){
-  List<String> datatypes = new ArrayList<String>();
-  datatypes.add("Array");
-  datatypes.add("Binary Search");
-  datatypes.add("Binary Tree");
-  datatypes.add("Breadth-First Search");
-  datatypes.add("Depth-First Search");
-  datatypes.add("Doubly Linked List");
-  datatypes.add("Hash Table");
-  datatypes.add("Linked List");
-  datatypes.add("Sorting");
-  datatypes.add("Stack");
-  datatypes.add("String");
-  datatypes.add("Queue");
-  return datatypes;
-}
+  // ============ Get Favorite Problems By User ============
+  public List<Problem> getFavoriteProblems(User user){
+    List<Problem> allProblems = allProblems();
+    List<Problem> favoriteProblems = new ArrayList<>();
+    for(Problem problem : allProblems){
+      if(problem.getFavorited().contains(user)){
+        favoriteProblems.add(problem);
+      }
+    }
+    return favoriteProblems;
+  }
 
-
+  // ============ Get Solved Problems By User ============
+  public Set<Long> getSolvedProblems(User user){
+    List<Problem> allProblemsSolved = user.getProblemsSolved();
+    Set<Long> solvedProblemsIds = new HashSet<>();
+    for(Problem problem : allProblemsSolved){
+      solvedProblemsIds.add(problem.getId());
+    }
+    return solvedProblemsIds;
+  }
 
 }
