@@ -16,13 +16,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.nightcrew.petesalgos.models.Comment;
 import com.nightcrew.petesalgos.models.Problem;
 import com.nightcrew.petesalgos.models.User;
 import com.nightcrew.petesalgos.repositories.CommentRepository;
-import com.nightcrew.petesalgos.repositories.ProblemRepository;
 import com.nightcrew.petesalgos.repositories.UserRepository;
 import com.nightcrew.petesalgos.services.CommentService;
 import com.nightcrew.petesalgos.services.ProblemService;
