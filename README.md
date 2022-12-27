@@ -217,7 +217,7 @@ Via Email - felixvjr0@gmail.com
 [pulls-url]: https://github.com/bryan-j-park/petesalgos/pulls
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/felixvargasjr/
-[product-screenshot]: src/main/resources/static/imgs/pete2.png
+[product-screenshot]: src/main/resources/static/imgs/landingPage.png
 [product-screenshot2]: food_app/static/img/Mainpageaddingfood.png
 [product-screenshot3]: food_app/static/img/mainDashboard.png
 [product-screenshot4]: food_app/static/img/Dailytotals.png
