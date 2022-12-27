@@ -39,10 +39,10 @@
     <img src="src/main/resources/static/imgs/pete2.png" alt="Logo" width="210" height="200">
   </a>
 
-  <h3 align="center">HealthFull</h3>
+  <h3 align="center">Pete's Algo</h3>
 
   <p align="center">
-    Food and Calorie Tracker
+    Data Structure's and Algorithom's Practice/Study Application
     <br />
     <a href="https://github.com/bryan-j-park/petesalgos"><strong>Explore the docs »</strong></a>
     <br />
@@ -181,13 +181,6 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-<!-- CONTACT -->
-## Contact
-
-Via Email - felixvjr0@gmail.com
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
