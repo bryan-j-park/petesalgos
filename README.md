@@ -124,18 +124,10 @@ To get a local copy up and running follow these simple example steps.
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://www.edamam.com](https://www.edamam.com)
-2. Clone the repo
+
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/HealthFull-project-.git
-   ```
-3. Install packages
-   ```sh
-   pipenv install flask pymysql flask-bycript
-   ```
-4. Enter your API in `script.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+   git clone https://github.com/your_username_/petesalgos.git
    ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -144,47 +136,45 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Once logged in a user can search any food along with the serving amount that they've eaten throughout the day and save it. A list of calories, protien, and carbs will display.
+Once the user has created an account or logged in, they will be redirected to out main dashboard. This page will display all of our datatype, problems, and a favorites section to the right.
 
-A user can only save food if they create an account, the date calender will not appear if the user is not logged in.
+*The user has added favorite problems and now has a list.*
 
 [![Product Name Screen Shot][product-screenshot2]](https://example.com)
 
-
-Once the user has saved the meal per specific date, they will be redirected to their dashboard which will display all of their meals with each catogory totaled. I used Chart.js to display visually appealing data for the user. 
-
-The graph on the right is displaying data of saved food totaled up by specific month, the user can use this information to compare their calories month to month.
-
-The Doughnut Chart on the left is to display the information that is in the table but in a more user friendly way. The user can toggle a catogory in the chart and view it specifically. 
+The user will be able to select a datatype and only will the specific datatype selected be shown, as well as being able to search by difficulty pertaining to the datatype.
 
 
 [![Product Name Screen Shot][product-screenshot3]](https://example.com)
 
 
-As the user clicks on "View Meals By Date" on the dashboard page, they will come here a view their meals totaled by the date. I added this page to organize the data for the user. A delete button was made for the user if they felt like there was a mistake with some meals on that specific date.
+Once the user clicks on the problem name, they will be brought to the Algo page, this is where the user can view the problem, solution, and even say they solved the problem by clicking the button under the problem name on the top left.
 
-The next page was very fun for me to make.
+Once clicked it will change to "remove from solved"
+
+*These solved problems will display a checkmark on the status section of the table and will follow the user throughout the site.*
 
 
 [![Product Name Screen Shot][product-screenshot4]](https://example.com)
 
 
-I decided to add a feature where a user can input goals for the day to keep them on track. I first had issues accessing the page if a user did not have a goal input, I had to involve a bit of logic to allow the user access. 
-
-Now if the use doesn't have any goal input, they will be able to see and emput chart and the three categories at 0. A button will display that says "Create A Goal".
-
-*I added little notes for the user, which i will so make for the user to unput their own notes.*
-
-Also, a table will show of all the meals per that day, along with a delete button.
-
 
 [![Product Name Screen Shot][product-screenshot5]](https://example.com)
 
 
-Once the user has inputted their goal for the day, the page will display their goal, current calorie count, and remaining calories. This will adjust as the user inputs more meals per that date as well as deleting data. I also put in a chart for a more visual appeal.
+Going back to the algo page, a user can leave comments pertaining to that specific algorithom. They can leave a normal comment as well as a special feature of leaving an optional code that they've used to solve that problem.
+
+*The language it accepts is javascript, we are looking to improve the site so it can accept other languages as well.*
 
 
 [![Product Name Screen Shot][product-screenshot6]](https://example.com)
+
+
+
+Once the user has submitted their comment, it will appear under the comment section in recent order. The user who created the comment is allowed to delete it.
+
+
+[![Product Name Screen Shot][product-screenshot7]](https://example.com)
 
 
 _For more examples, please refer to the [Documentation](https://example.com)_
@@ -223,6 +213,7 @@ Via Email - felixvjr0@gmail.com
 [product-screenshot4]: src/main/resources/static/imgs/editalgopage.png
 [product-screenshot5]: src/main/resources/static/imgs/dashboardwithallsolved.png
 [product-screenshot6]: src/main/resources/static/imgs/texteditor.png
+[product-screenshot7]: src/main/resources/static/imgs/addingcomment.png
 [java]: https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white
 [React.js]: https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white
 [Laravel.com]:https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
