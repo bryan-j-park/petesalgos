@@ -24,13 +24,20 @@
 -->
 [![contributors][contributors-shield]][contributors-url]
 [![forks][forks-shield]][forks-url]
-[![linkedIn][linkedin-shield]][linkedin-url]
 [![stars][stars-shield]][stars-url]
 [![issues][issues-shield]][issues-url]
 [![commits][commits-shield]][commits-url]
 [![pulls][pulls-shield]][pulls-url]
 
-
+*Connect with us!*
+ <br />
+ *- FELIX -* [![linkedIn][linkedin-shield]][linkedin-url]
+ <br />
+*- JACOB -* [![Jacob][jacob-shield]][jacob-url]
+ <br />
+*- GABRIELA -* [![Gabriela][gabriela-shield]][gabriela-url]
+ <br />
+*- BRYAN -* [![Bryan][bryan-shield]][bryan-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -200,6 +207,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 [pulls-url]: https://github.com/bryan-j-park/petesalgos/pulls
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/felixvargasjr/
+[jacob-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[jacob-url]: https://www.linkedin.com/in/jacob-reynolds-99789015a/
+[gabriela-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[gabriela-url]: https://www.linkedin.com/in/gabriela-flores-b3b73b122/
+[bryan-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[bryan-url]: https://www.linkedin.com/in/bryanjpark/
 [product-screenshot]: src/main/resources/static/imgs/landingPage.png
 [product-screenshot2]: src/main/resources/static/imgs/editmaindashboard.png
 [product-screenshot3]: src/main/resources/static/imgs/sorting%20.png
