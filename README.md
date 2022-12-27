@@ -22,17 +22,20 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![contributors][contributors-shield]][contributors-url]
+[![forks][forks-shield]][forks-url]
+[![linkedIn][linkedin-shield]][linkedin-url]
 [![stars][stars-shield]][stars-url]
 [![issues][issues-shield]][issues-url]
+[![commits][commits-shield]][commits-url]
+[![pulls][pulls-shield]][pulls-url]
 
 
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/NeverGiveUp23/HealthFull-project-">
+  <a href="https://github.com/bryan-j-park/petesalgos">
     <img src="src/main/resources/static/imgs/pete2.png" alt="Logo" width="210" height="200">
   </a>
 
@@ -41,14 +44,14 @@
   <p align="center">
     Food and Calorie Tracker
     <br />
-    <a href="https://github.com/NeverGiveUp23/HealthFull-project-"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/bryan-j-park/petesalgos"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
     ·
-    <a href="https://github.com/NeverGiveUp23/HealthFull-project-/issues">Report Bug</a>
+    <a href="https://github.com/bryan-j-park/petesalgos/issues">Report Bug</a>
     ·
-    <a href="https://github.com/NeverGiveUp23/HealthFull-project-/issues">Request Feature</a>
+    <a href="https://github.com/bryan-j-park/petesalgos/issues">Request Feature</a>
   </p>
 </div>
 
@@ -99,11 +102,10 @@ Pete's Algo's is the perfect tool to hone your skills and stay sharp. Give it a 
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* ![Next][Next.js]
+* ![java][java]
 * ![React][React.js]
-* ![Vue][Vue.js]
 * ![Laravel][Laravel.com]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* ![css][css]
 * ![JQuery][JQuery.com]
 * ![MySQL.com][MySQL.com]
 
@@ -201,14 +203,18 @@ Via Email - felixvjr0@gmail.com
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]:https://github.com/NeverGiveUp23/HealthFull-project-/network/members
-[stars-shield]: https://img.shields.io/github/stars/NeverGiveUp23/HealthFull-project-.svg
-[stars-url]: https://github.com/NeverGiveUp23/HealthFull-project-/stargazers
-[issues-shield]: https://img.shields.io/github/issues/NeverGiveUp23/HealthFull-project-.svg
-[issues-url]: https://github.com/NeverGiveUp23/HealthFull-project-issues
+[contributors-shield]: https://img.shields.io/github/contributors/bryan-j-park/petesalgos.svg?style=for-the-badge
+[contributors-url]: https://github.com/bryan-j-park/petesalgos/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/bryan-j-park/petesalgos.svg?style=for-the-badge
+[forks-url]:https://github.com/bryan-j-park/petesalgos/network/members
+[stars-shield]: https://img.shields.io/github/stars/bryan-j-park/petesalgos.svg
+[stars-url]: https://github.com/bryan-j-park/petesalgos/stargazers
+[issues-shield]: https://img.shields.io/github/issues/bryan-j-park/petesalgos.svg
+[issues-url]: https://github.com/bryan-j-park/petesalgos/issues
+[commits-shield]: https://img.shields.io/github/commits-since/bryan-j-park/petesalgos/f42d424.svg
+[commits-url]: https://github.com/bryan-j-park/petesalgos/commits
+[pulls-shield]: https://img.shields.io/github/issues-pr-closed/bryan-j-park/petesalgos.svg
+[pulls-url]: https://github.com/bryan-j-park/petesalgos/pulls
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/felixvargasjr/
 [product-screenshot]: src/main/resources/static/imgs/pete2.png
@@ -217,11 +223,9 @@ Via Email - felixvjr0@gmail.com
 [product-screenshot4]: food_app/static/img/Dailytotals.png
 [product-screenshot5]: food_app/static/img/Beforegoalinputpage.png
 [product-screenshot6]: food_app/static/img/GoalResultPage.png
-[Next.js]: https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white
-[React.js]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
-[Vue.js]: https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white
+[java]: https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white
+[React.js]: https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white
 [Laravel.com]:https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
+[css]:https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
 [JQuery.com]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
 [mySQL.com]: https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white
