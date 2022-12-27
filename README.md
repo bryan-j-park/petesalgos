@@ -218,11 +218,11 @@ Via Email - felixvjr0@gmail.com
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/felixvargasjr/
 [product-screenshot]: src/main/resources/static/imgs/landingPage.png
-[product-screenshot2]: food_app/static/img/Mainpageaddingfood.png
-[product-screenshot3]: food_app/static/img/mainDashboard.png
-[product-screenshot4]: food_app/static/img/Dailytotals.png
-[product-screenshot5]: food_app/static/img/Beforegoalinputpage.png
-[product-screenshot6]: food_app/static/img/GoalResultPage.png
+[product-screenshot2]: src/main/resources/static/imgs/editmaindashboard.png
+[product-screenshot3]: src/main/resources/static/imgs/sorting%20.png
+[product-screenshot4]: src/main/resources/static/imgs/editalgopage.png
+[product-screenshot5]: src/main/resources/static/imgs/dashboardwithallsolved.png
+[product-screenshot6]: src/main/resources/static/imgs/texteditor.png
 [java]: https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white
 [React.js]: https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white
 [Laravel.com]:https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
