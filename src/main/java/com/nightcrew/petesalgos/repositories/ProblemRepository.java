@@ -14,8 +14,6 @@ import com.nightcrew.petesalgos.models.Problem;
 @Repository
 public interface ProblemRepository extends CrudRepository<Problem, Long> {
 
-  // List<Problem> findAll();
-
   List<Problem> findProblemById(Long userId);
 
   @Transactional

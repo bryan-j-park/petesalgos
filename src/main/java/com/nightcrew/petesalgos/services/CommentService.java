@@ -29,8 +29,4 @@ public class CommentService {
   public List<Comment> getCommentDesc(Problem problem){
     return commentRepo.allCommentDesc(problem);
   }
-
-
-
-
 }

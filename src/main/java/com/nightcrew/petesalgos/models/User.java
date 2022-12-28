@@ -1,6 +1,5 @@
 package com.nightcrew.petesalgos.models;
 
-
 import java.util.Date;
 import java.util.List;
 
@@ -91,7 +90,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 			inverseJoinColumns = @JoinColumn(name = "problem_id")
 		)
 		private List<Problem> problems;
-
 
 		public User() {}
 
