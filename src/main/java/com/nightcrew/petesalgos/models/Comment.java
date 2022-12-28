@@ -33,14 +33,11 @@ public class Comment {
   @Lob
   private String userSolution;
 
-
- 
   @Column(updatable=false)
   @DateTimeFormat(pattern="MM-dd-yyyy")
   private Date createdAt;
   @DateTimeFormat(pattern="MM-dd-yyyy")
   private Date updatedAt;
-
 
   @PrePersist
   protected void onCreated() {
@@ -60,15 +57,12 @@ public class Comment {
   @JoinColumn(name = "problem_id")
   private Problem problem;
 
-
 public Comment(){}
 
 public Comment(String comment, String userSolution){
   this.comment = comment;
   this.userSolution = userSolution;
 }
-
-
 
   // getters/setters
   public Long getId() {
@@ -86,7 +80,6 @@ public Comment(String comment, String userSolution){
   public void setComment(String comment) {
     this.comment = comment;
   }
-
 
   public Date getCreatedAt() {
     return createdAt;
@@ -120,7 +113,6 @@ public Comment(String comment, String userSolution){
     this.problem = problem;
   }
 
-
   public void setUserSolution(String userSolution) {
     this.userSolution = userSolution;
   }
@@ -128,22 +120,4 @@ public Comment(String comment, String userSolution){
   public String getUserSolution() {
     return userSolution;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  // end
 }

@@ -64,13 +64,11 @@ public List<String> datatypes(){
   }
 
   //Create problem
-  
   public Problem createProblem(Problem problem) {
     return problemRepo.save(problem);
   }
   
   //Retrieves one problem
-  
   public Problem getProblem(Long id) {
     Optional<Problem> optionalProblem = problemRepo.findById(id);
     
@@ -83,41 +81,39 @@ public List<String> datatypes(){
     }
   }
 
-
   //edit name
-
-public Problem editProblem(Problem problem) {
-	return problemRepo.save(problem);
-}
-
-//Delete Name
-public void deleteProblem(Long id) {
-	problemRepo.deleteById(id);
-}
-
-// ============ Add Favorite Problem By userId and problemId ============
-public void favoriteProblem(Long userId, Long problemId){
-  Optional<User> optionalUser = userRepo.findById(userId);
-  Optional<Problem> optionalProblem = problemRepo.findById(problemId);
-  if(optionalUser.isPresent() && optionalProblem.isPresent()){
-    User user = optionalUser.get();
-    Problem problem = optionalProblem.get();
-    problem.getFavorited().add(user);
-    problemRepo.save(problem);
+  public Problem editProblem(Problem problem) {
+    return problemRepo.save(problem);
   }
-}
 
-// ============ Delete Favorite Problem By userId and problemId ============
-public void deleteFav(Long userId, Long problemId){
-  Optional<User> optionalUser = userRepo.findById(userId);
-  Optional<Problem> optionalProblem = problemRepo.findById(problemId);
-  if(optionalUser.isPresent() && optionalProblem.isPresent()){
-    User user = optionalUser.get();
-    Problem problem = optionalProblem.get();
-    problem.getFavorited().remove(user);
-    problemRepo.save(problem);
+  //Delete Name
+  public void deleteProblem(Long id) {
+    problemRepo.deleteById(id);
   }
-}
+
+  // ============ Add Favorite Problem By userId and problemId ============
+  public void favoriteProblem(Long userId, Long problemId){
+    Optional<User> optionalUser = userRepo.findById(userId);
+    Optional<Problem> optionalProblem = problemRepo.findById(problemId);
+    if(optionalUser.isPresent() && optionalProblem.isPresent()){
+      User user = optionalUser.get();
+      Problem problem = optionalProblem.get();
+      problem.getFavorited().add(user);
+      problemRepo.save(problem);
+    }
+  }
+
+  // ============ Delete Favorite Problem By userId and problemId ============
+  public void deleteFav(Long userId, Long problemId){
+    Optional<User> optionalUser = userRepo.findById(userId);
+    Optional<Problem> optionalProblem = problemRepo.findById(problemId);
+    if(optionalUser.isPresent() && optionalProblem.isPresent()){
+      User user = optionalUser.get();
+      Problem problem = optionalProblem.get();
+      problem.getFavorited().remove(user);
+      problemRepo.save(problem);
+    }
+  }
 
   // ============ Get Favorite Problems By User ============
   public List<Problem> getFavoriteProblems(User user){

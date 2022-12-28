@@ -1,8 +1,6 @@
 package com.nightcrew.petesalgos.controllers;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -51,25 +49,17 @@ public class MainController {
     if(notInSession){
       return "redirect:/";
     } 
-    else{
-      Problem problem = problemService.getProblem(id);
-      model.addAttribute("problem", problem);
-// ================== Get Solved Problems By User Id ============
+    // ---------------- Algo Page Variables ----------------
+    Problem problem = problemService.getProblem(id);
     Long userId = (Long) session.getAttribute("userId");
     User loggedInUser = userService.getOneUser(userId);
-    List<Problem> solvedProblems = loggedInUser.getProblemsSolved();
-    Set<Long> solvedProblemIds = new HashSet<>();
-    for(Problem algo : solvedProblems){
-      solvedProblemIds.add(algo.getId());
-    }
-    model.addAttribute("solvedProblemIds", solvedProblemIds);
-    
-    // ================= Comment Section =====================
     List<Comment> allComments = commentService.getCommentDesc(problem);
-    model.addAttribute("allComments", allComments);
 
+    // ---------------- Algo Page Models ----------------
+    model.addAttribute("problem", problem);
+    model.addAttribute("solvedProblemIds", problemService.getSolvedProblems(loggedInUser));
+    model.addAttribute("allComments", allComments);
     return "algo.jsp";
-    }
   }
 
   // ============= Add Solved Algo By userId and problemId ===================
@@ -107,24 +97,19 @@ public class MainController {
       return "algo.jsp";
     }
     if(result.hasErrors()){
-        Problem problem = problemService.getProblem(problemId);
-        model.addAttribute("problem", problem);
-  // ================== Get Solved Problems By User Id ============
+      // ---------------- Algo Page Variables ----------------
+      Problem problem = problemService.getProblem(problemId);
       Long userId = (Long) session.getAttribute("userId");
       User loggedInUser = userService.getOneUser(userId);
-      List<Problem> solvedProblems = loggedInUser.getProblemsSolved();
-      Set<Long> solvedProblemIds = new HashSet<>();
-      for(Problem algo : solvedProblems){
-        solvedProblemIds.add(algo.getId());
-      }
-      model.addAttribute("solvedProblemIds", solvedProblemIds);
-      
-      // ================= Comment Section =====================
       List<Comment> allComments = commentService.getCommentDesc(problem);
+
+      // ---------------- Algo Page Models ----------------
+      model.addAttribute("problem", problem);
+      model.addAttribute("solvedProblemIds", problemService.getSolvedProblems(loggedInUser));
       model.addAttribute("allComments", allComments);
       return "algo.jsp";
     }
-      commentService.createComment(comment);
+    commentService.createComment(comment);
     return "redirect:/algo/{problemId}";
   }
 
