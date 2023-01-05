@@ -7,6 +7,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Pete's Algos</title>
         <link rel="stylesheet" type="text/css" href="/css/index.css" />
         <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto&display=swap" rel="stylesheet">
@@ -27,9 +28,7 @@
                 Welcome to Pete's Algo's, your one stop shop for algorithm practice on your coding journey! Pete is a cute and clever little opossum who is here to help you reach your goals. Pete's Algo's is a great place to practice your algorithms, work through the solutions, and save your favorites. Get started with Pete today! 
             </article>
         </section>
-        <!-- <a href="/loginpage">
-            <button>Get Started</button>
-        </a> -->
+        
         <section class="right">
             <div class="form">
                 <div class="form-content">
