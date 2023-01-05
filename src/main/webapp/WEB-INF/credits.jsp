@@ -7,6 +7,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Pete's Algos</title>
         <link rel="stylesheet" type="text/css" href="/css/style.css" />
         <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto&display=swap" rel="stylesheet">
@@ -32,15 +33,19 @@
         <h1>Credits</h1>
         <h2>Team:</h2>
         <h3>Felix Vargas Jr — <span>Back-end developer</span></h3>
+        <p><a href="https://www.linkedin.com/in/felixvargasjr/">LinkedIn</a></p>
         <p><a href="https://github.com/NeverGiveUp23">Github</a></p>
 
         <h3>Bryan Park — <span>Back-end developer</span></h3>
+        <p><a href="https://www.linkedin.com/in/bryanjpark/">LinkedIn</a></p>
         <p><a href="https://github.com/bryan-j-park">Github</a></p>
 
         <h3>Jacob Reynolds — <span>Back-end developer</span></h3>
+        <p><a href="https://www.linkedin.com/in/jacobreynolds2012/">LinkedIn</a></p>
         <p><a href="https://github.com/jakjak2012">Github</a></p>
 
         <h3>Gabriela Flores — <span>Front-end developer</span></h3>
+        <p><a href="https://www.linkedin.com/in/gabrielareneflores/">LinkedIn</a></p>
         <p><a href="https://github.com/floresgabriela">Github</a></p>
 
     </main>
