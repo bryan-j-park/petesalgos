@@ -292,7 +292,7 @@ footer {
     display: flex;
     justify-content: center;
     font-size: small;
-    width:100%;
+    white-space: nowrap;
 }
 
 .pete-imgs {
@@ -303,4 +303,40 @@ footer {
     max-height: 300px;
     width: auto;
     margin: 0 20px;
+}
+
+@media only screen and (max-width:1024px) {
+    main {
+        width:95%;
+    }
+    .profile {
+        display: none;
+    }
+    table{
+        width:100%;
+        margin:0 auto;
+    }
+}
+
+@media only screen and (max-width:768px){
+    footer {
+        font-size: smaller;
+    }
+    .pete-imgs img {
+        max-height: 250px;
+        width: auto;
+        margin: 0 20px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    main {
+        width:100%;
+    }
+    .fave-add {
+        display: none;
+    }
+    .sort {
+        overflow: scroll;
+    }
 }
