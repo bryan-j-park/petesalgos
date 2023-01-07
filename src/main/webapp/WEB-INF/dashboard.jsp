@@ -24,8 +24,8 @@
             <h1>Pete's Algos</h1>
         </nav>
         <div class="links">
-            <h2><a href="/dashboard">dashboard</a></h2>
-            <h2><a href="/logout">logout</a></h2>
+            <h3><a href="/dashboard">dashboard</a></h3>
+            <h3><a href="/logout">logout</a></h3>
         </div>
     </header>
     <main>
@@ -118,6 +118,8 @@
                 </c:forEach>
             </div>
         </section>
+
+<!-- for grid: remove main, move h1 into section, move profile out of section, change stylesheet -->
 
     </main>
 
