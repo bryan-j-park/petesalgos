@@ -55,7 +55,7 @@
                             </select>
                             
                         </th>
-                        <th>Add to Favorites</th>
+                        <th class="fave-add">Add to Favorites</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -81,21 +81,21 @@
                         <c:choose>
                             <c:when test="${problem.favorited.contains(user)}">
                                 <!-- favorited referring to the list in the problem model -->
-                            <td>
+                            <td class="fave-add">
                                 <form action="/favorites/${problem.id}/delete" method="post" class="fave-btn">
                                     <input type="hidden" name="_method" value="put" />
                                     <button type="submit">Remove Favorite</button>
                                 </form>
 
                             </td>
-                        </c:when>
+                            </c:when>
 
-                        <c:otherwise>
-                            <td>
-                                    <form action="/favorites/${problem.id}/receive" method="post" class="fave-btn">
-                                        <input type="hidden" name="_method" value="put" />
-                                        <button type="submit">Add To Favorites</button>
-                                    </form>
+                            <c:otherwise>
+                                <td class="fave-add">
+                                        <form action="/favorites/${problem.id}/receive" method="post" class="fave-btn">
+                                            <input type="hidden" name="_method" value="put" />
+                                            <button type="submit">Add To Favorites</button>
+                                        </form>
 
                                 </td>
                             </c:otherwise>
