@@ -46,7 +46,7 @@
     <img src="src/main/resources/static/imgs/pete2.png" alt="Logo" width="210" height="200">
   </a>
 
-  <h3 align="center">Pete's Algo</h3>
+  <h3 align="center">Pete's Algos</h3>
 
   <p align="center">
     Data Structure's and Algorithom's Practice/Study Application
